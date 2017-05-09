@@ -20,16 +20,4 @@ public class SplachActivity extends Activity{
         };
         handler.sendEmptyMessageDelayed(0,3000);
     }
-  /* @Override
-    protected void onCreate(Bundle savedInstanceState){
-       super.onCreate(savedInstanceState);
-       try{
-           Thread.sleep(3000);
-       }
-       catch (InterruptedException e){
-           e.printStackTrace();
-       }
-       startActivity(new Intent(this, MainActivity.class));
-       finish();
-    }*/
 }
