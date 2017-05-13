@@ -1,6 +1,5 @@
 package org.androidtown.cok;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
     Button btn_up,btn_down;
-    Button Fbutton;
+    Button Fbutton,Cbutton;
     TextView text;
     EditText title;
     int count = 0;
@@ -21,8 +20,15 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Fbutton = (Button)findViewById(R.id.finish);
         setup();
+        Cbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"qwe",Toast.LENGTH_SHORT).show();
+                Intent cintent = new Intent(getApplicationContext(),Calendar.class);
+                //startActivity(cintent);
+            }
+        });
         Fbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +48,8 @@ public class Main2Activity extends AppCompatActivity {
         btn_up = (Button) findViewById(R.id.buttonp);
         btn_down = (Button) findViewById(R.id.buttonm);
         text = (TextView) findViewById(R.id.count);
-
+        Fbutton = (Button)findViewById(R.id.finish);
+        Cbutton = (Button)findViewById(R.id.button);
         btn_up.setOnClickListener(listener);
         btn_down.setOnClickListener(listener);
     }
