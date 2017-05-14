@@ -24,9 +24,8 @@ public class Main2Activity extends AppCompatActivity {
         Cbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"qwe",Toast.LENGTH_SHORT).show();
                 Intent cintent = new Intent(getApplicationContext(),Calendar.class);
-                //startActivity(cintent);
+                startActivity(cintent);
             }
         });
         Fbutton.setOnClickListener(new View.OnClickListener() {
