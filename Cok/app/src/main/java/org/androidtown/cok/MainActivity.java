@@ -14,11 +14,14 @@ import static android.R.attr.data;
 
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton mbutton;
+    ImageButton mbutton;String phoneNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
+        phoneNum = telephonyManager.getLine1Number();
+        Toast.makeText(getApplicationContext(),phoneNum,Toast.LENGTH_SHORT).show();
         //startActivity(new Intent(this,SplachActivity.class));
         mbutton = (ImageButton)findViewById(R.id.m_button);
         mbutton.setOnClickListener(new View.OnClickListener() {
