@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_marginTop="30dp"
+        android:stretchColumns="*"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
+            <TextView
+                android:layout_span="1"
+                android:layout_marginLeft="30dp"
+                android:text="프로젝트 :"
+                android:textSize="30dp" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_span="10"
+                android:textSize="30dp"/>
+        </TableRow>
+        <TableRow>
+            <ProgressBar
+                android:layout_marginLeft="30dp"
+                android:layout_span="11"
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D-DAY :"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:text="1010일"
+                android:textSize="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:text="미팅 횟수"
+                android:layout_gravity="center"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

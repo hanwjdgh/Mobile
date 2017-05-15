@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.androidtown.myapplication.Main2Activity">
+    android:background="?attr/colorButtonNormal"
+    tools:context="org.androidtown.cok.Main2Activity">
 
 
     <TextView
@@ -35,11 +36,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="40dp"
+        android:text="모임 수        :  "
         android:layout_below="@+id/textView"
-        android:layout_marginTop="38dp"
-        android:text="모임 수        :  " />
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
 
     <TextView
         android:id="@+id/count"
@@ -57,23 +58,20 @@
         android:id="@+id/buttonm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/count"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="-" />
+        android:text="-"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
 
     <Button
         android:id="@+id/buttonp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/count"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/count"
-        android:layout_toRightOf="@+id/count"
-        android:text="+" />
+        android:text="+"
+        android:layout_above="@+id/button"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3" />
 
     <Button
         android:id="@+id/finish"
@@ -88,9 +86,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Button"
+        android:layout_below="@+id/buttonm"
         android:layout_alignLeft="@+id/buttonm"
         android:layout_alignStart="@+id/buttonm"
-        android:layout_below="@+id/buttonm"
-        android:layout_marginTop="42dp"
-        android:text="Button" />
+        android:layout_alignRight="@+id/buttonp"
+        android:layout_alignEnd="@+id/buttonp" />
 </RelativeLayout>
