@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
     Button btn_up,btn_down;
-    Button Fbutton,Cbutton;
+    Button Fbutton,sd_button, fd_button;
     TextView text;
     EditText title;
     int count = 0;
@@ -21,7 +21,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         setup();
-        Cbutton.setOnClickListener(new View.OnClickListener() {
+        sd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent cintent = new Intent(getApplicationContext(),Calendar.class);
@@ -42,13 +42,15 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
+
     private void setup() {
         title = (EditText)findViewById(R.id.editText3);
         btn_up = (Button) findViewById(R.id.buttonp);
         btn_down = (Button) findViewById(R.id.buttonm);
         text = (TextView) findViewById(R.id.count);
         Fbutton = (Button)findViewById(R.id.finish);
-        Cbutton = (Button)findViewById(R.id.button);
+        sd_button = (Button)findViewById(R.id.sd_dutton);
+        fd_button = (Button)findViewById(R.id.fd_button);
         btn_up.setOnClickListener(listener);
         btn_down.setOnClickListener(listener);
     }

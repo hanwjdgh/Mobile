@@ -1,10 +1,8 @@
 package org.androidtown.cok;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
@@ -12,8 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import static android.R.attr.data;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         String outName = data.getStringExtra("title");
         int num = data.getIntExtra("number",1);
         Toast.makeText(getApplicationContext(), outName + " "+ num, Toast.LENGTH_LONG).show();
+        android.app.FragmentManager fm = getFragmentManager();
+        android.app.FragmentTransaction tr = fm.beginTransaction();
+        MainFragment cf=new MainFragment();
+        tr.add(R.id.frame, cf ,"counter");
+        tr.commit();
     }
 
     @Override
