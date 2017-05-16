@@ -11,6 +11,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
@@ -66,6 +73,36 @@ public class MainActivity extends AppCompatActivity {
             }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+    private HttpURLConnection getConnection(String path) {
+        try {
+            URL url = new URL("http://127.0.0.1:3000" + path);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            con.setRequestMethod("GET");
+            con.setRequestProperty("Content-Type", "application/json");
+            return con;
+
+            //readJson(con);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private JSONArray readJson(HttpURLConnection con) {
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+            return new JSONArray(response.toString());
+        } catch (Exception e) {
+            return null;
         }
     }
 }
