@@ -9,22 +9,41 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 /**
  * Created by GE62 on 2017-05-15.
  */
 
 public class MainFragment extends Fragment {
+    TextView pName;
+    TextView mCount;
+    TextView mcount;
     ProgressBar bar;
     ProgressHandler handler;
+    Button btn;
     boolean isRunning =false;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_main,container,false);
         bar = (ProgressBar)rootView.findViewById(R.id.progress);
+        pName =(TextView)rootView.findViewById(R.id.text);
+        mCount =(TextView)rootView.findViewById(R.id.text2);
+        mcount = (TextView)rootView.findViewById(R.id.text3);
+       btn =(Button)rootView.findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+             @Override
+            public void onClick(View v) {
+                              mcount.setText("gg".toString());
+                           }
+         });
         handler = new ProgressHandler();
+        Bundle extra = getArguments();
+        pName.setText(extra.getString("Project").toString());
+        mCount.setText(extra.getString("mCount").toString());
         return rootView;
     }
     @Override

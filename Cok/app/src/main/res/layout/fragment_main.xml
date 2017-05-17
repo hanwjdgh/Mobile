@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/tableLayout"
+        android:layout_alignLeft="@+id/tableLayout"
+        android:layout_alignStart="@+id/tableLayout"
+        android:layout_alignTop="@+id/tableLayout"
+        android:layout_alignRight="@+id/tableLayout"
+        android:layout_alignEnd="@+id/tableLayout" />
     <TableLayout
         android:layout_marginTop="30dp"
+        android:background="@drawable/border"
         android:stretchColumns="*"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="346dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tableLayout">
         <TableRow>
             <TextView
                 android:layout_span="1"
-                android:layout_marginLeft="30dp"
-                android:text="프로젝트 :"
+                android:text="프 로 젝 트 :"
                 android:textSize="30dp" />
             <TextView
                 android:id="@+id/text"
@@ -21,7 +34,6 @@
         </TableRow>
         <TableRow>
             <ProgressBar
-                android:layout_marginLeft="30dp"
                 android:layout_span="11"
                 android:id="@+id/progress"
                 style="?android:attr/progressBarStyleHorizontal"
@@ -30,31 +42,46 @@
                 android:layout_height="match_parent" />
         </TableRow>
         <TableRow>
-
             <TextView
-                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:textSize="30dp"
+                android:text="   인   원    :"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/text2"
+                android:layout_gravity="center"
+                android:layout_span="10"
+                android:textSize="30dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="D-DAY :"
-                android:textSize="20dp" />
-
+                android:text="   D - DAY   :"
+                android:textSize="30dp"/>
             <TextView
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
-                android:text="1010일"
-                android:textSize="20dp"
+                android:text=" 1010일"
+                android:textSize="30dp"
                 />
         </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:text="미팅 횟수"
+                android:textSize="30dp"
+                android:text="  미팅 횟수 :"
                 android:layout_gravity="center"/>
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/text3"
+                android:layout_span="10"
+                android:textSize="30dp"/>
         </TableRow>
     </TableLayout>
 
-</LinearLayout>
+</RelativeLayout>

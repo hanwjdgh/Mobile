@@ -12,16 +12,22 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.Socket;
 import java.net.URL;
 
 
 public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
     String phoneNum;
+    String strqwe="";
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +36,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,SplachActivity.class));
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
-        phoneNum = telephonyManager.getLine1Number();
-        Toast.makeText(getApplicationContext(),phoneNum,Toast.LENGTH_SHORT).show();
+        //phoneNum = telephonyManager.getLine1Number();
+        //readJson(getConnection("/"));
+        new Thread(){
+            @Override
+            public void run(){
+                System.out.println("!!!");
+                HttpURLConnection con= getConnection("/");
+                System.out.println("Connection done");
+                try{
+                    System.out.println(con.getResponseCode());
+                    readJson(con);
+                    System.out.println("Result is: "+strqwe);
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+        //Toast.makeText(getApplicationContext(),strqwe,Toast.LENGTH_LONG).show();
 
         mbutton = (ImageButton)findViewById(R.id.m_button);
         mbutton.setOnClickListener(new View.OnClickListener() {
@@ -49,11 +72,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String outName = data.getStringExtra("title");
-        int num = data.getIntExtra("number",1);
+        String num = data.getStringExtra("number");
         Toast.makeText(getApplicationContext(), outName + " "+ num, Toast.LENGTH_LONG).show();
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf=new MainFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("Project",outName);
+        bundle.putString("mCount",num);
+        cf.setArguments(bundle);
         tr.add(R.id.frame, cf ,"counter");
         tr.commit();
     }
@@ -75,15 +102,14 @@ public class MainActivity extends AppCompatActivity {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
     private HttpURLConnection getConnection(String path) {
         try {
-            URL url = new URL("http://127.0.0.1:3000" + path);
+            URL url = new URL("http://192.9.5.100:3000/");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
             return con;
-
             //readJson(con);
         } catch (Exception e) {
             return null;
@@ -97,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
             StringBuffer response = new StringBuffer();
 
             while ((inputLine = in.readLine()) != null) {
+                strqwe+=inputLine;
                 response.append(inputLine);
             }
             in.close();

@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
-        android:layout_above="@+id/fd_button"
+        android:layout_above="@+id/sd_dutton"
         android:layout_alignRight="@+id/editText3"
         android:layout_alignEnd="@+id/editText3" />
 
