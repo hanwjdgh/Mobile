@@ -12,15 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.Socket;
 import java.net.URL;
 
 
@@ -36,25 +31,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,SplachActivity.class));
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
-        //phoneNum = telephonyManager.getLine1Number();
+        phoneNum = telephonyManager.getLine1Number();
         //readJson(getConnection("/"));
         new Thread(){
             @Override
             public void run(){
                 System.out.println("!!!");
-                HttpURLConnection con= getConnection("/");
+                HttpURLConnection con= getConnection("/phonenum/"+phoneNum);
                 System.out.println("Connection done");
                 try{
                     System.out.println(con.getResponseCode());
                     readJson(con);
                     System.out.println("Result is: "+strqwe);
-
                 }catch(Exception e){
                     e.printStackTrace();
                 }
             }
         }.start();
-        //Toast.makeText(getApplicationContext(),strqwe,Toast.LENGTH_LONG).show();
+
 
         mbutton = (ImageButton)findViewById(R.id.m_button);
         mbutton.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HttpURLConnection getConnection(String path) {
         try {
-            URL url = new URL("http://192.9.5.100:3000/");
+            URL url = new URL("http://192.9.5.140:3000"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
