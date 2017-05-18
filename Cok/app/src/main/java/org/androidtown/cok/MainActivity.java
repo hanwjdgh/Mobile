@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), outName + " "+ num, Toast.LENGTH_LONG).show();
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        MainFragment cf=new MainFragment();
+        MainFragment cf = new MainFragment(MainActivity.this);
         Bundle bundle = new Bundle();
         bundle.putString("Project",outName);
         bundle.putString("mCount",num);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HttpURLConnection getConnection(String path) {
         try {
-            URL url = new URL("http://192.9.5.140:3000"+path);
+            URL url = new URL("http://172.16.35.242:3000"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
