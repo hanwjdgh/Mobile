@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
             return con;
-            //readJson(con);
         } catch (Exception e) {
             return null;
         }

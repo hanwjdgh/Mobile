@@ -46,13 +46,14 @@
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:text="0"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/buttonm"
         android:layout_toRightOf="@+id/buttonm"
-        android:layout_toEndOf="@+id/buttonm" />
+        android:text="0"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonm"

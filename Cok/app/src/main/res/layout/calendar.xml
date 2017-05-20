@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/calendar"
         android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:text="확인" />
 
 
 </RelativeLayout>
