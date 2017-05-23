@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
     String phoneNum;
     String strqwe="";
+    String result = "";
+
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 HttpURLConnection con= getConnection("/phonenum/"+phoneNum);
                 System.out.println("Connection done");
                 try{
-                    System.out.println(con.getResponseCode());
-                    readJson(con);
+                    System.out.println("code"+con.getResponseCode());
+                    arrayToobject(readJson(con));
                     System.out.println("Result is: "+strqwe);
                 }catch(Exception e){
                     e.printStackTrace();
@@ -68,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
         String outName = data.getStringExtra("title");
         String num = data.getStringExtra("number");
         Toast.makeText(getApplicationContext(), outName + " "+ num, Toast.LENGTH_LONG).show();
+        makefragment(outName,num);
+    }
+
+    public void makefragment(String outName,String num){
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf = new MainFragment(MainActivity.this);
@@ -78,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         tr.add(R.id.frame, cf ,"counter");
         tr.commit();
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -99,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HttpURLConnection getConnection(String path) {
         try {
-            URL url = new URL("http://172.16.35.242:3000"+path);
+            URL url = new URL("http://192.9.5.203:3000"+path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
@@ -123,6 +130,14 @@ public class MainActivity extends AppCompatActivity {
             return new JSONArray(response.toString());
         } catch (Exception e) {
             return null;
+        }
+    }
+    private void arrayToobject(JSONArray jsonArray) throws JSONException {
+        for (int i = 0; i < jsonArray.length(); i++){
+            JSONObject order = jsonArray.getJSONObject(i);
+            result += "phonenum: " + order.getString("phonenum") + ", project: " + order.getString("project") +
+                    ", people: " + order.getInt("people") + ", meeting: " + order.getInt("meeting")+"\n";
+            makefragment(order.getString("project"),order.getInt("meeting")+"");
         }
     }
 }
