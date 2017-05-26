@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -24,44 +25,44 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
     String phoneNum;
-    String strqwe="";
-    String result = "";
+    String strqwe = "";
 
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startActivity(new Intent(this,SplachActivity.class));
+        startActivity(new Intent(this, SplachActivity.class));
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         phoneNum = telephonyManager.getLine1Number();
         //readJson(getConnection("/"));
-        new Thread(){
+        new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 System.out.println("!!!");
-                HttpURLConnection con= getConnection("/phonenum/"+phoneNum);
+                HttpURLConnection con = getConnection("GET","/phonenum/" + phoneNum);
                 System.out.println("Connection done");
-                try{
-                    System.out.println("code"+con.getResponseCode());
+                try {
+                    System.out.println("code" + con.getResponseCode());
                     arrayToobject(readJson(con));
-                    System.out.println("Result is: "+strqwe);
-                }catch(Exception e){
+                    System.out.println("Result is: " + strqwe);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }.start();
 
 
-        mbutton = (ImageButton)findViewById(R.id.m_button);
+        mbutton = (ImageButton) findViewById(R.id.m_button);
         mbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                 Bundle bundle = new Bundle();
                 intent.putExtras(bundle);
-                startActivityForResult(intent,1);
+                startActivityForResult(intent, 1);
             }
         });
     }
@@ -71,21 +72,23 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         String outName = data.getStringExtra("title");
         String num = data.getStringExtra("number");
-        Toast.makeText(getApplicationContext(), outName + " "+ num, Toast.LENGTH_LONG).show();
-        makefragment(outName,num);
+       // Toast.makeText(getApplicationContext(), outName + " " + num, Toast.LENGTH_LONG).show();
+        makefragment(outName, num);
+        Insertproject(outName, num);
     }
 
-    public void makefragment(String outName,String num){
+    public void makefragment(String outName, String num) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf = new MainFragment(MainActivity.this);
         Bundle bundle = new Bundle();
-        bundle.putString("Project",outName);
-        bundle.putString("mCount",num);
+        bundle.putString("Project", outName);
+        bundle.putString("mCount", num);
         cf.setArguments(bundle);
-        tr.add(R.id.frame, cf ,"counter");
+        tr.add(R.id.frame, cf, "counter");
         tr.commit();
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -104,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private HttpURLConnection getConnection(String path) {
+    private HttpURLConnection getConnection(String method,String path) {
         try {
-            URL url = new URL("http://192.9.5.203:3000"+path);
+            URL url = new URL("http://192.168.219.119:3000" + path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
+            con.setRequestMethod(method);
+            //con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
             return con;
         } catch (Exception e) {
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             StringBuffer response = new StringBuffer();
 
             while ((inputLine = in.readLine()) != null) {
-                strqwe+=inputLine;
+                strqwe += inputLine;
                 response.append(inputLine);
             }
             in.close();
@@ -132,12 +136,38 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
-        for (int i = 0; i < jsonArray.length(); i++){
+        for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
-            result += "phonenum: " + order.getString("phonenum") + ", project: " + order.getString("project") +
-                    ", people: " + order.getInt("people") + ", meeting: " + order.getInt("meeting")+"\n";
-            makefragment(order.getString("project"),order.getInt("meeting")+"");
+//            result += "phonenum: " + order.getString("phonenum") + ", project: " + order.getString("project") +
+//                    ", people: " + order.getInt("people") + ", meeting: " + order.getInt("meeting")+"\n";
+            makefragment(order.getString("project"), order.getInt("meeting") + "");
         }
+    }
+
+    public void Insertproject(final String name, final String num) {
+        new Thread() {
+            @Override
+            public void run() {
+                HttpURLConnection con = getConnection("POST","/insert");
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("project", name);
+                    jsonObject.put("meeting", num);
+                    System.out.println("code1" + con.getResponseCode());
+                } catch (Exception e) {
+                }
+                sendJson(con, jsonObject);
+            }
+        }.start();
+    }
+    private void sendJson(HttpURLConnection con, JSONObject json) {
+        System.out.println("asd"+json);
+        try {
+            OutputStream out = con.getOutputStream();
+            out.write(json.toString().getBytes());
+            out.flush();
+        } catch (Exception e) { }
     }
 }
