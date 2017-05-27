@@ -176,5 +176,4 @@ public class MainActivity extends AppCompatActivity {
             out.flush();
         } catch (Exception e) { }
     }
-
 }
