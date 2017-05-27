@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
             URL url = new URL("http://192.168.219.119:3000" + path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(method);
-            //con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
+            System.out.println("\nSending +request to: " + url.toString());
             return con;
         } catch (Exception e) {
             return null;
@@ -150,24 +150,31 @@ public class MainActivity extends AppCompatActivity {
         new Thread() {
             @Override
             public void run() {
-                HttpURLConnection con = getConnection("POST","/insert");
+                HttpURLConnection con = getConnection("POST","/add");
                 JSONObject jsonObject = new JSONObject();
                 try {
+                    jsonObject.put("phonenum",phoneNum);
                     jsonObject.put("project", name);
-                    jsonObject.put("meeting", num);
-                    System.out.println("code1" + con.getResponseCode());
+                    jsonObject.put("meeting", Integer.parseInt(num));
                 } catch (Exception e) {
                 }
                 sendJson(con, jsonObject);
+                try {
+                    System.out.println("code1" + con.getResponseCode());
+                    System.out.println("Result is: " + jsonObject);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }.start();
     }
+
     private void sendJson(HttpURLConnection con, JSONObject json) {
-        System.out.println("asd"+json);
         try {
             OutputStream out = con.getOutputStream();
             out.write(json.toString().getBytes());
             out.flush();
         } catch (Exception e) { }
     }
+
 }
