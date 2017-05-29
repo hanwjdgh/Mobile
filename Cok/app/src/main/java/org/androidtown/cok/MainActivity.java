@@ -25,8 +25,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
     String phoneNum;
-    String strqwe = "";
-
+    int[] arr = {31,28,31,30,31,30,31,31,30,31,30,31};
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
 
     @Override
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         phoneNum = telephonyManager.getLine1Number();
-        //readJson(getConnection("/"));
         new Thread() {
             @Override
             public void run() {
@@ -47,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     System.out.println("code" + con.getResponseCode());
                     arrayToobject(readJson(con));
-                    System.out.println("Result is: " + strqwe);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -70,20 +67,49 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String outName = data.getStringExtra("title");
-        String num = data.getStringExtra("number");
-       // Toast.makeText(getApplicationContext(), outName + " " + num, Toast.LENGTH_LONG).show();
-        makefragment(outName, num);
-        Insertproject(outName, num);
+        if (resultCode == RESULT_OK) {
+            String outName = data.getStringExtra("title");
+            String num = data.getStringExtra("number");
+            String start = data.getStringExtra("start");
+            String finish = data.getStringExtra("finish");
+
+            if(outName.length()>0&&num.length()>0) {
+                makefragment(outName, num, calculate(start,finish)+"");
+                Insertproject(outName, num,start,finish);
+            }
+        }
     }
 
-    public void makefragment(String outName, String num) {
+    public int calculate(String start, String finish){
+        String[] arr1 = start.split("-");
+        String[] arr2 = finish.split("-");
+        int stem=0,ftem=0;
+        for(int i=0; i<Integer.parseInt(arr1[1]);i++){
+            stem+=arr[i];
+        }
+        stem+=Integer.parseInt(arr1[2]);
+        for(int i=0; i<Integer.parseInt(arr2[1]);i++){
+            ftem+=arr[i];
+        }
+        ftem+=Integer.parseInt(arr2[2]);
+        if(ftem-stem>=0||ftem-stem+1>=0) {
+            if (Integer.parseInt(arr1[1]) == Integer.parseInt(arr2[1]))
+                return ftem - stem;
+            else
+                return ftem - stem + 1;
+        }
+        else
+            return 0;
+    }
+
+    public void makefragment(String outName, String num, String day) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf = new MainFragment(MainActivity.this);
         Bundle bundle = new Bundle();
         bundle.putString("Project", outName);
         bundle.putString("mCount", num);
+        bundle.putString("day",day);
         cf.setArguments(bundle);
         tr.add(R.id.frame, cf, "counter");
         tr.commit();
@@ -109,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HttpURLConnection getConnection(String method,String path) {
         try {
-            URL url = new URL("http://192.168.219.119:3000" + path);
+            URL url = new URL("http://172.16.38.15:3000" + path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(method);
             con.setRequestProperty("Content-Type", "application/json");
@@ -127,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
             StringBuffer response = new StringBuffer();
 
             while ((inputLine = in.readLine()) != null) {
-                strqwe += inputLine;
                 response.append(inputLine);
             }
             in.close();
@@ -140,13 +165,11 @@ public class MainActivity extends AppCompatActivity {
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
-//            result += "phonenum: " + order.getString("phonenum") + ", project: " + order.getString("project") +
-//                    ", people: " + order.getInt("people") + ", meeting: " + order.getInt("meeting")+"\n";
-            makefragment(order.getString("project"), order.getInt("meeting") + "");
+            makefragment(order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
         }
     }
 
-    public void Insertproject(final String name, final String num) {
+    public void Insertproject(final String name, final String num, final String start, final String finish) {
         new Thread() {
             @Override
             public void run() {
@@ -156,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
                     jsonObject.put("phonenum",phoneNum);
                     jsonObject.put("project", name);
                     jsonObject.put("meeting", Integer.parseInt(num));
+                    jsonObject.put("start",start);
+                    jsonObject.put("finish",finish);
                 } catch (Exception e) {
                 }
                 sendJson(con, jsonObject);

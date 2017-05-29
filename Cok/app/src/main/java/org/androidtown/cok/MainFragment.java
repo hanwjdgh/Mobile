@@ -26,6 +26,7 @@ public class MainFragment extends Fragment {
     ProgressBar bar;
     ProgressHandler handler;
     Button btn;
+    TextView day;
     boolean isRunning =false;
     Context mainContext;
 
@@ -37,15 +38,17 @@ public class MainFragment extends Fragment {
         pName =(TextView)rootView.findViewById(R.id.text);
         mCount =(TextView)rootView.findViewById(R.id.text2);
         mcount = (TextView)rootView.findViewById(R.id.text3);
+        day = (TextView)rootView.findViewById(R.id.day);
         btn =(Button)rootView.findViewById(R.id.btn);
+
         handler = new ProgressHandler();
         Bundle extra = getArguments();
         pName.setText(extra.getString("Project").toString());
-        mCount.setText(extra.getString("mCount").toString());
+        //mCount.setText(extra.getString("mCount").toString());
+        mcount.setText(extra.getString("mCount").toString());
+        day.setText(extra.getString("day").toString()+"일");
+        bar.setMax(Integer.parseInt(extra.getString("day")));
         btn.setOnClickListener(new View.OnClickListener() {
-
-
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mainContext,Main3Activity.class);
@@ -85,7 +88,7 @@ public class MainFragment extends Fragment {
 
     public class ProgressHandler extends Handler {
         public void handleMessage(Message msg){
-            bar.incrementProgressBy(5);
+            bar.incrementProgressBy(1);
         }
     }
 }

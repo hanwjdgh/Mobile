@@ -12,35 +12,37 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:text="프로잭트 명 : "
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="93dp"
-        android:text="프로잭트 명 : " />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/finish"
+        android:layout_alignStart="@+id/finish" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="모임 수        :  "
-        android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="40dp"
+        android:text="모임 수    :  "
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/count"
@@ -53,26 +55,30 @@
         android:layout_toEndOf="@+id/buttonm"
         android:layout_toRightOf="@+id/buttonm"
         android:text="0"
-        android:textSize="24sp" />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/buttonm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignStart="@+id/editText3"
+        android:background="@android:color/transparent"
+        android:text="-"
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/buttonp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
         android:layout_above="@+id/sd_dutton"
+        android:layout_alignEnd="@+id/editText3"
         android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
+        android:background="@android:color/transparent"
+        android:text="+"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/finish"
@@ -87,23 +93,27 @@
         android:id="@+id/fd_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:text="Button"
-        android:layout_below="@+id/sd_dutton"
+        android:layout_alignEnd="@+id/sd_dutton"
         android:layout_alignLeft="@+id/sd_dutton"
+        android:layout_alignRight="@+id/sd_dutton"
         android:layout_alignStart="@+id/sd_dutton"
-        android:layout_alignRight="@+id/buttonp"
-        android:layout_alignEnd="@+id/buttonp" />
+        android:layout_below="@+id/sd_dutton"
+        android:layout_marginTop="49dp"
+        android:background="@android:color/transparent"
+        android:text="Button"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/sd_dutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/buttonp"
-        android:layout_alignLeft="@+id/buttonm"
+        android:layout_alignLeft="@+id/textView2"
         android:layout_alignRight="@+id/buttonp"
-        android:layout_alignStart="@+id/buttonm"
+        android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/buttonm"
-        android:layout_marginTop="30dp"
-        android:text="Button" />
+        android:layout_marginTop="58dp"
+        android:background="@android:color/transparent"
+        android:text="Button"
+        android:textSize="24sp" />
 </RelativeLayout>

@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <CalendarView
-        android:id="@+id/calendar"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/table"
+        android:stretchColumns="*">
+       <TableRow>
+           <Button
+               android:background="#00FFFFFF"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="시작일"
+               android:id="@+id/btn" />
+           <Button
+               android:background="#00FFFFFF"
+               android:id="@+id/btn2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="종료일"
+               />
+       </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_below="@id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_frame"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/calendar"
-        android:layout_centerHorizontal="true"
-        android:text="확인" />
+        android:text="Button"
+        android:layout_below="@+id/c_frame"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

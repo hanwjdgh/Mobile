@@ -56,20 +56,19 @@
                 android:textSize="30dp"/>
         </TableRow>
         <TableRow>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="   D -  day   :"
                 android:textSize="30dp" />
+
             <TextView
-                android:layout_height="match_parent"
+                android:id="@+id/day"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text=" 1010일"
-                android:textSize="30dp"
-                />
+                android:textSize="30dp" />
         </TableRow>
         <TableRow>
             <TextView
