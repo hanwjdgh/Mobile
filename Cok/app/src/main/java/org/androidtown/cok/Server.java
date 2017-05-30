@@ -39,6 +39,7 @@ public class Server {
             }
         }.start();
     }
+
     public HttpURLConnection getConnection(String method, String path) {
         try {
             URL url = new URL("http://192.168.219.157:3000" + path);

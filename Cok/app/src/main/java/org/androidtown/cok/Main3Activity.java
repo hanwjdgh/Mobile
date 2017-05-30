@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.kakao.kakaolink.AppActionBuilder;
+import com.kakao.kakaolink.AppActionInfoBuilder;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 import com.kakao.util.KakaoParameterException;
@@ -21,6 +23,7 @@ public class Main3Activity extends AppCompatActivity  {
     TextView text1;
     TextView text2;
     Button btn;
+    String title;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,7 @@ public class Main3Activity extends AppCompatActivity  {
         btn = (Button)findViewById(R.id.btn);
         Intent data=getIntent();
         Bundle bundle = data.getExtras();
-        String title=bundle.getString("NAME").toString();
+        title=bundle.getString("NAME").toString();
         String number =bundle.getString("NUM").toString();
         text1.setText(title);
         text2.setText(number);
@@ -42,18 +45,13 @@ public class Main3Activity extends AppCompatActivity  {
             }
         });
     }
-
     public void shareKakao(View v) {
         try {
             final KakaoLink kakaoLink = KakaoLink.getKakaoLink(this);
             final KakaoTalkLinkMessageBuilder kakaoBuilder = kakaoLink.createKakaoTalkLinkMessageBuilder();
-              /*메시지 추가*/
-            kakaoBuilder.addText("투표하세요.");
 
-             /*앱 실행버튼 추가*/
-            kakaoBuilder.addAppButton("앱 실행 혹은 다운로드");
-
-            /*메시지 발송*/
+            kakaoBuilder.addText("텍스트");
+            kakaoBuilder.addAppButton("제발",new AppActionBuilder().addActionInfo(AppActionInfoBuilder.createAndroidActionInfoBuilder().setExecuteParam("project"+"="+title).build()).build());
             kakaoLink.sendMessage(kakaoBuilder, this);
         } catch (KakaoParameterException e) {
             e.printStackTrace();

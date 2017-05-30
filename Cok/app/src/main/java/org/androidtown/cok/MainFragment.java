@@ -23,12 +23,14 @@ public class MainFragment extends Fragment {
     TextView pName;
     TextView mCount;
     TextView mcount;
+    TextView percent;
     ProgressBar bar;
     ProgressHandler handler;
     Button btn;
     TextView day;
     boolean isRunning =false;
     Context mainContext;
+    Bundle extra;
 
     @Nullable
     @Override
@@ -40,22 +42,24 @@ public class MainFragment extends Fragment {
         mcount = (TextView)rootView.findViewById(R.id.text3);
         day = (TextView)rootView.findViewById(R.id.day);
         btn =(Button)rootView.findViewById(R.id.btn);
+        //percent = (TextView)rootView.findViewById(R.id.percent) ;
 
         handler = new ProgressHandler();
-        Bundle extra = getArguments();
+         extra = getArguments();
         pName.setText(extra.getString("Project").toString());
         //mCount.setText(extra.getString("mCount").toString());
         mcount.setText(extra.getString("mCount").toString());
         day.setText(extra.getString("day").toString()+"일");
         bar.setMax(Integer.parseInt(extra.getString("day")));
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mainContext,Main3Activity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("NAME",pName.getText().toString());
-                bundle.putString("NUM",mCount.getText().toString());
+                bundle.putString("NUM",mcount.getText().toString());
+                bundle.putString("Start",extra.getString("start"));
+                bundle.putString("Finsih",extra.getString("finish"));
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -72,10 +76,13 @@ public class MainFragment extends Fragment {
         bar.setProgress(0);
         Thread thread1 = new Thread(new Runnable(){
             public void run(){
-                try{for(int i=0; i<20 && isRunning; i++){
-                    Thread.sleep(1000);
+                try{
+                    for(int i=0; i<Integer.parseInt(extra.getString("day")) && isRunning; i++){
+                        Thread.sleep(1000);
                     Message msg = handler.obtainMessage();
-                    handler.sendMessage(msg);            }}
+                    handler.sendMessage(msg);
+                }
+                }
                 catch(Exception ex){
                     Log.e("MainActivity", "Exception in processing message.", ex);
                 }}
