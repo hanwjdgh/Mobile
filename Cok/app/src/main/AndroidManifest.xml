@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Main2Activity">
+        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main3Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -37,7 +38,6 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
-        <activity android:name=".Main3Activity" ></activity>
         <activity android:name=".Calendar"></activity>
     </application>
 

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     String phoneNum;
     int[] arr = {31,28,31,30,31,30,31,31,30,31,30,31};
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
+    Server server = new Server();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,20 @@ public class MainActivity extends AppCompatActivity {
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         phoneNum = telephonyManager.getLine1Number();
-        new Thread() {
-            @Override
-            public void run() {
-                System.out.println("!!!");
-                HttpURLConnection con = getConnection("GET","/phonenum/" + phoneNum);
-                System.out.println("Connection done");
-                try {
-                    System.out.println("code" + con.getResponseCode());
-                    arrayToobject(readJson(con));
-                } catch (Exception e) {
-                    e.printStackTrace();
+            new Thread() {
+                @Override
+                public void run() {
+                    System.out.println("!!!");
+                    HttpURLConnection con = server.getConnection("GET","/phonenum/" + phoneNum);
+                    System.out.println("Connection done");
+                    try {
+                        System.out.println("code" + con.getResponseCode());
+                        arrayToobject(server.readJson(con));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        }.start();
+            }.start();
 
 
         mbutton = (ImageButton) findViewById(R.id.m_button);
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(outName.length()>0&&num.length()>0) {
                 makefragment(outName, num, calculate(start,finish)+"");
-                Insertproject(outName, num,start,finish);
+                server.Insertproject(phoneNum,outName, num,start,finish);
             }
         }
     }
@@ -138,72 +139,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private HttpURLConnection getConnection(String method,String path) {
-        try {
-            URL url = new URL("http://192.9.5.44:3000" + path);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod(method);
-            con.setRequestProperty("Content-Type", "application/json");
-            System.out.println("\nSending +request to: " + url.toString());
-            return con;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    private JSONArray readJson(HttpURLConnection con) {
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            return new JSONArray(response.toString());
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
             makefragment(order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
         }
-    }
-
-    public void Insertproject(final String name, final String num, final String start, final String finish) {
-        new Thread() {
-            @Override
-            public void run() {
-                HttpURLConnection con = getConnection("POST","/add");
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put("phonenum",phoneNum);
-                    jsonObject.put("project", name);
-                    jsonObject.put("meeting", Integer.parseInt(num));
-                    jsonObject.put("start",start);
-                    jsonObject.put("finish",finish);
-                } catch (Exception e) {
-                }
-                sendJson(con, jsonObject);
-                try {
-                    System.out.println("code1" + con.getResponseCode());
-                    System.out.println("Result is: " + jsonObject);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-    }
-
-    private void sendJson(HttpURLConnection con, JSONObject json) {
-        try {
-            OutputStream out = con.getOutputStream();
-            out.write(json.toString().getBytes());
-            out.flush();
-        } catch (Exception e) { }
     }
 }

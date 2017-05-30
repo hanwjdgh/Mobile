@@ -73,22 +73,6 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
-    public void shareKakao(View v) {
-        try {
-            final KakaoLink kakaoLink = KakaoLink.getKakaoLink(Main2Activity.this);
-            final KakaoTalkLinkMessageBuilder kakaoBuilder = kakaoLink.createKakaoTalkLinkMessageBuilder();
-              /*메시지 추가*/
-            kakaoBuilder.addText("투표하세요.");
-
-             /*앱 실행버튼 추가*/
-            kakaoBuilder.addAppButton("앱 실행 혹은 다운로드");
-
-            /*메시지 발송*/
-            kakaoLink.sendMessage(kakaoBuilder, this);
-        } catch (KakaoParameterException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
