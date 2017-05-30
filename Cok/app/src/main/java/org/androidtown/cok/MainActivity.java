@@ -1,11 +1,14 @@
 package org.androidtown.cok;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -20,6 +23,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HttpURLConnection getConnection(String method,String path) {
         try {
-            URL url = new URL("http://172.16.38.15:3000" + path);
+            URL url = new URL("http://192.9.5.44:3000" + path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(method);
             con.setRequestProperty("Content-Type", "application/json");

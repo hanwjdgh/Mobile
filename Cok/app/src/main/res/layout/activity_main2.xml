@@ -116,4 +116,15 @@
         android:background="@android:color/transparent"
         android:text="Button"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/count"
+        android:layout_alignStart="@+id/count"
+        android:layout_below="@+id/fd_button"
+        android:text="Button"
+        android:onClick="shareKakao"/>
+
 </RelativeLayout>
