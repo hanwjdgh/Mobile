@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by GE62 on 2017-05-15.
@@ -51,6 +52,7 @@ public class MainFragment extends Fragment {
         //mCount.setText(extra.getString("mCount").toString());
         mcount.setText(extra.getString("mCount").toString());
         day.setText(extra.getString("day").toString()+"일");
+
         bar.setMax(Integer.parseInt(extra.getString("day")));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -22,29 +26,27 @@ public class VoteActivtiy extends AppCompatActivity {
     String[] arr1,arr2;
     Server server = new Server();
     MainActivity mainActivity = new MainActivity();
-    HashMap<String, Integer> data;
-    Intent intent;
-    Intent fintent = new Intent();
-    Bundle bundle3;
+    public static HashMap<String, Integer> data;
     Bundle bundle2;
-    Thread th;
+    String s;
+    Button btn;
+    String phoneNum,meeting,start,finish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vote);
+        btn = (Button)findViewById(R.id.button);
+        phoneNum = getPhoneNum();
+
         Intent intent = getIntent();
         Uri uri = intent.getData();
         msg = uri.getQueryParameter("project");
-
         arr1 = msg.split("/");
         arr2 = arr1[0].split(" ");
         msg1+=arr2[1];
-       // Toast.makeText(getApplicationContext(), msg1, Toast.LENGTH_SHORT).show();
-        data= new HashMap<>();
-        th=new cThread();
-        th.start();
 
+        data= new HashMap<>();
         new Thread() {
             @Override
             public void run() {
@@ -57,6 +59,17 @@ public class VoteActivtiy extends AppCompatActivity {
                 }
             }
         }.start();
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                server.Insertproject(msg1,phoneNum,arr1[1],meeting,start,finish);
+                //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
+                Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
+                startActivity(inte);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -66,11 +79,18 @@ public class VoteActivtiy extends AppCompatActivity {
 
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         JSONObject order = jsonArray.getJSONObject(0);
+        meeting = order.getString("meeting");
+        start = order.getString("start");
+        finish = order.getString("finish");
         String[] arr1 = order.getString("start").split("-");
         int tem = mainActivity.calculate(order.getString("start"), order.getString("finish"));
         int year = Integer.parseInt(arr1[0]), mon = Integer.parseInt(arr1[1]), day = Integer.parseInt(arr1[2]);
 
         for (int j = 0; j < tem; j++) {
+            s=year + "-" + mon + "-" + day;
+            data.put(year + "-" + mon + "-" + day, 0);
+            makefragment(year + "-" + mon + "-" + day);
+
             if (mon == 2 && day == 28) {
                 mon += 1;
                 day = 1;
@@ -86,35 +106,24 @@ public class VoteActivtiy extends AppCompatActivity {
             }
             else
                 day++;
-            data.put(year + "-" + mon + "-" + day, 0);
-            makefragment(year + "-" + mon + "-" + day);
         }
     }
 
     public void makefragment(String start) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        dateFragment cf = new dateFragment(VoteActivtiy.this, data, fintent);
+        dateFragment cf = new dateFragment(VoteActivtiy.this);
         bundle2 = new Bundle();
-
+        bundle2.putInt("count",data.get(start));
         bundle2.putString("start", start);
 
         cf.setArguments(bundle2);
         tr.add(R.id.sframe, cf, "co");
         tr.commit();
     }
-    class cThread extends Thread {
-        public void run() {
-            while (true) {
-                try {
-                    Thread.sleep(100);
-                    bundle3= intent.getExtras();
-                    data.put(bundle3.getString("date"),bundle3.getInt("c"));
-                    Toast.makeText(getApplicationContext(),bundle3.getString("date")+"  : "+bundle3.getInt("c"),Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                }
-            }
-        }
+    public String getPhoneNum(){
+        TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
+        return telephonyManager.getLine1Number();
     }
 
 }

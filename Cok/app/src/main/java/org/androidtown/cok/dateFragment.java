@@ -3,13 +3,16 @@ package org.androidtown.cok;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -18,48 +21,49 @@ import java.util.HashMap;
  */
 
 public class dateFragment extends Fragment {
-    HashMap<String, Integer> info;
     TextView text;
+    TextView text2;
     Context mainContext;
-    CheckBox check;
-    Intent intent;
-    Bundle bundle2;
+    RelativeLayout layout;
+    int ct = 0;
+    Bundle bundle;
+    int count;
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_date, container, false);
-        text=(TextView)rootView.findViewById(R.id.text);
-        check=(CheckBox)rootView.findViewById(R.id.check);
-        final Bundle bundle = getArguments();
+        text = (TextView) rootView.findViewById(R.id.text);
+        text2 = (TextView) rootView.findViewById(R.id.text2);
+        layout = (RelativeLayout) rootView.findViewById(R.id.relative);
+        bundle = getArguments();
+        text2.setText(VoteActivtiy.data.get(bundle.getString("start"))+"");
+
         text.setText(bundle.getString("start"));
 
-        check.setOnClickListener(new View.OnClickListener() {
+        layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(check.isChecked()){
-                    int count = info.get(bundle.getString("start"));
+                ct++;
+                if (ct % 2 == 1) {
+                    layout.setBackgroundColor(Color.RED);
+                    count = VoteActivtiy.data.get(bundle.getString("start"));
                     count++;
-                    bundle2=new Bundle();
-                    bundle2.putInt("c",count);
-                    bundle2.putString("date",bundle.getString("start"));
-                    intent.putExtras(bundle2);
-
-                }
-                else if(!check.isChecked()){
-                    int count = info.get(bundle.getString("start"));
+                    text2.setText(count + "");
+                    VoteActivtiy.data.put(bundle.getString("start"), count);
+                } else if (ct % 2 == 0) {
+                    layout.setBackgroundColor(Color.WHITE);
+                    count = VoteActivtiy.data.get(bundle.getString("start"));
                     count--;
-                    bundle2=new Bundle();
-                    bundle2.putInt("c",count);
-                    bundle2.putString("date",bundle.getString("start"));
-                    intent.putExtras(bundle2);
+                    text2.setText(count + "");
+                    VoteActivtiy.data.put(bundle.getString("start"), count);
                 }
 
             }
         });
 
-        return  rootView;
+        return rootView;
     }
-    public dateFragment(Context _context, HashMap<String, Integer> data, Intent intent){
+
+    public dateFragment(Context _context) {
         mainContext = _context;
-        info=data;
-        this.intent=intent;
     }
 }
