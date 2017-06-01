@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         startActivity(new Intent(this, SplachActivity.class));
 
-        TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
-        phoneNum = telephonyManager.getLine1Number();
+        phoneNum = getPhoneNum();
+        //Toast.makeText(getApplicationContext(),phoneNum,Toast.LENGTH_SHORT).show();
             new Thread() {
                 @Override
                 public void run() {
@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    public String getPhoneNum(){
+        TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
+        return telephonyManager.getLine1Number();
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             String finish = data.getStringExtra("finish");
 
             if(outName.length()>0&&num.length()>0) {
-                makefragment(outName, num, calculate(start,finish)+"");
+                makefragment(phoneNum,outName, num, calculate(start,finish)+"");
                 server.Insertproject(phoneNum,outName, num,start,finish);
             }
         }
@@ -108,11 +111,12 @@ public class MainActivity extends AppCompatActivity {
             return 0;
     }
 
-    public void makefragment(String outName, String num, String day) {
+    public void makefragment(String master, String outName, String num, String day) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf = new MainFragment(MainActivity.this);
         Bundle bundle = new Bundle();
+        bundle.putString("master", master);
         bundle.putString("Project", outName);
         bundle.putString("mCount", num);
         bundle.putString("day",day);
@@ -142,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
-            makefragment(order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
+            makefragment(order.getString("master"),order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
         }
     }
 }

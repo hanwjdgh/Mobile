@@ -11,19 +11,23 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
+import java.util.HashMap;
 
 /**
  * Created by LEE on 2017-05-30.
  */
 
 public class VoteActivtiy extends AppCompatActivity {
-    Intent intent;
-    Bundle bundle;
-    String start;
-    String end;
-    String msg;
+    String msg,msg1="+";
+    String[] arr1,arr2;
     Server server = new Server();
     MainActivity mainActivity = new MainActivity();
+    HashMap<String, Integer> data;
+    Intent intent;
+    Intent fintent = new Intent();
+    Bundle bundle3;
+    Bundle bundle2;
+    Thread th;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +36,19 @@ public class VoteActivtiy extends AppCompatActivity {
         Intent intent = getIntent();
         Uri uri = intent.getData();
         msg = uri.getQueryParameter("project");
-        //Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+
+        arr1 = msg.split("/");
+        arr2 = arr1[0].split(" ");
+        msg1+=arr2[1];
+       // Toast.makeText(getApplicationContext(), msg1, Toast.LENGTH_SHORT).show();
+        data= new HashMap<>();
+        th=new cThread();
+        th.start();
 
         new Thread() {
             @Override
             public void run() {
-                HttpURLConnection con = server.getConnection("GET", "/project/" + msg);
+                HttpURLConnection con = server.getConnection("GET", "/project/" + msg1+"/"+arr1[1]);
                 try {
                     System.out.println("code" + con.getResponseCode());
                     arrayToobject(server.readJson(con));
@@ -54,11 +65,8 @@ public class VoteActivtiy extends AppCompatActivity {
     }
 
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
-        System.out.println("@@@");
         JSONObject order = jsonArray.getJSONObject(0);
-        System.out.println("@@@@"+order);
         String[] arr1 = order.getString("start").split("-");
-        System.out.println("@@@@"+arr1[0]+" "+arr1[1]+" "+arr1[2]);
         int tem = mainActivity.calculate(order.getString("start"), order.getString("finish"));
         int year = Integer.parseInt(arr1[0]), mon = Integer.parseInt(arr1[1]), day = Integer.parseInt(arr1[2]);
 
@@ -78,6 +86,7 @@ public class VoteActivtiy extends AppCompatActivity {
             }
             else
                 day++;
+            data.put(year + "-" + mon + "-" + day, 0);
             makefragment(year + "-" + mon + "-" + day);
         }
     }
@@ -85,8 +94,8 @@ public class VoteActivtiy extends AppCompatActivity {
     public void makefragment(String start) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        dateFragment cf = new dateFragment(VoteActivtiy.this);
-        Bundle bundle2 = new Bundle();
+        dateFragment cf = new dateFragment(VoteActivtiy.this, data, fintent);
+        bundle2 = new Bundle();
 
         bundle2.putString("start", start);
 
@@ -94,4 +103,18 @@ public class VoteActivtiy extends AppCompatActivity {
         tr.add(R.id.sframe, cf, "co");
         tr.commit();
     }
+    class cThread extends Thread {
+        public void run() {
+            while (true) {
+                try {
+                    Thread.sleep(100);
+                    bundle3= intent.getExtras();
+                    data.put(bundle3.getString("date"),bundle3.getInt("c"));
+                    Toast.makeText(getApplicationContext(),bundle3.getString("date")+"  : "+bundle3.getInt("c"),Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                }
+            }
+        }
+    }
+
 }

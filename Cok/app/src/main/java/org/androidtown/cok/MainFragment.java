@@ -31,7 +31,7 @@ public class MainFragment extends Fragment {
     boolean isRunning =false;
     Context mainContext;
     Bundle extra;
-
+    String mas;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -45,7 +45,8 @@ public class MainFragment extends Fragment {
         //percent = (TextView)rootView.findViewById(R.id.percent) ;
 
         handler = new ProgressHandler();
-         extra = getArguments();
+        extra = getArguments();
+        mas = extra.getString("master").toString();
         pName.setText(extra.getString("Project").toString());
         //mCount.setText(extra.getString("mCount").toString());
         mcount.setText(extra.getString("mCount").toString());
@@ -56,6 +57,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(mainContext,Main3Activity.class);
                 Bundle bundle = new Bundle();
+                bundle.putString("master",mas);
                 bundle.putString("NAME",pName.getText().toString());
                 bundle.putString("NUM",mcount.getText().toString());
                 bundle.putString("Start",extra.getString("start"));

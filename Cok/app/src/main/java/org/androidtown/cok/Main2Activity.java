@@ -33,8 +33,6 @@ public class Main2Activity extends AppCompatActivity {
     TextView text;
     EditText title;
     int count = 0;
-    private KakaoLink kakaoLink;
-    private KakaoTalkLinkMessageBuilder kakaoTalkLinkMessageBuilder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
