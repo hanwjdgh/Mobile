@@ -15,12 +15,9 @@ import android.widget.Button;
 
 public class Calendar extends AppCompatActivity {
 
-    Button button;
-    Button s_btn;
-    Button e_btn;
+    Button button,s_btn,e_btn;
     FragmentManager fm;
-    Thread th;
-    Thread th2;
+    Thread th,th2;
     CalendarFragment cf;
     CalendarFragment2 cf2;
     Bundle bundle;

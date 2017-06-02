@@ -22,7 +22,7 @@ import java.util.HashMap;
  */
 
 public class VoteActivtiy extends AppCompatActivity {
-    String msg,msg1="+";
+    String msg,msg1="+",project;
     String[] arr1,arr2;
     Server server = new Server();
     MainActivity mainActivity = new MainActivity();
@@ -31,7 +31,8 @@ public class VoteActivtiy extends AppCompatActivity {
     String s;
     Button btn;
     String phoneNum,meeting,start,finish;
-
+    public static int setting=0;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,18 +40,26 @@ public class VoteActivtiy extends AppCompatActivity {
         btn = (Button)findViewById(R.id.button);
         phoneNum = getPhoneNum();
 
-        Intent intent = getIntent();
-        Uri uri = intent.getData();
-        msg = uri.getQueryParameter("project");
-        arr1 = msg.split("/");
-        arr2 = arr1[0].split(" ");
-        msg1+=arr2[1];
-
+        if(setting==0) {
+            intent = getIntent();
+            Uri uri = intent.getData();
+            msg = uri.getQueryParameter("project");
+            arr1 = msg.split("/");
+            arr2 = arr1[0].split(" ");
+            msg1 += arr2[1];
+            project = arr1[1];
+        }
+        else{
+            intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            msg1 = bundle.getString("master");
+            project = bundle.getString("name");
+        }
         data= new HashMap<>();
         new Thread() {
             @Override
             public void run() {
-                HttpURLConnection con = server.getConnection("GET", "/project/" + msg1+"/"+arr1[1]);
+                HttpURLConnection con = server.getConnection("GET", "/project/" + msg1+"/"+project);
                 try {
                     System.out.println("code" + con.getResponseCode());
                     arrayToobject(server.readJson(con));
@@ -63,7 +72,7 @@ public class VoteActivtiy extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                server.Insertproject(msg1,phoneNum,arr1[1],meeting,start,finish);
+                server.Insertproject(msg1,phoneNum,project,meeting,start,finish);
                 //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
                 Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
                 startActivity(inte);

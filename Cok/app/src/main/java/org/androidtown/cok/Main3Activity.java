@@ -9,7 +9,6 @@ import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kakao.kakaolink.AppActionBuilder;
 import com.kakao.kakaolink.AppActionInfoBuilder;
@@ -40,7 +39,7 @@ public class Main3Activity extends AppCompatActivity  {
         btn2 = (Button)findViewById(R.id.btn2);
         btn3 = (Button)findViewById(R.id.btn3);
         Intent data=getIntent();
-        Bundle bundle = data.getExtras();
+        final Bundle bundle = data.getExtras();
         mas =bundle.getString("master").toString();
         title=bundle.getString("NAME").toString();
         String number =bundle.getString("NUM").toString();
@@ -53,12 +52,19 @@ public class Main3Activity extends AppCompatActivity  {
         }
         else{
             btn2.setVisibility(View.VISIBLE);
-            btn3.setVisibility(View.GONE);
+            btn3.setVisibility(View.VISIBLE);
         }
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               
+                VoteActivtiy vote = new VoteActivtiy();
+                vote.setting =1;
+                Intent intent = new Intent(Main3Activity.this,VoteActivtiy.class);
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("master",mas);
+                bundle1.putString("name",title);
+                intent.putExtras(bundle1);
+                startActivity(intent);
             }
         });
         btn.setOnClickListener(new View.OnClickListener() {

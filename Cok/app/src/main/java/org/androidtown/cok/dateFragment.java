@@ -2,27 +2,21 @@ package org.androidtown.cok;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.HashMap;
 
 /**
  * Created by LEE on 2017-05-30.
  */
 
 public class dateFragment extends Fragment {
-    TextView text;
-    TextView text2;
+    TextView text,text2;
     Context mainContext;
     RelativeLayout layout;
     int ct = 0;
