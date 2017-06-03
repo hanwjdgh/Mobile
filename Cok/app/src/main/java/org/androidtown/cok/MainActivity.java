@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     Server server = new Server();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -162,6 +161,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
             makefragment(order.getString("master"),order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
+            Main2Activity.Alarm.put("7",order.getInt("alarm7"));
+            Main2Activity.Alarm.put("5",order.getInt("alarm5"));
+            Main2Activity.Alarm.put("3",order.getInt("alarm3"));
+            Main2Activity.Alarm.put("1",order.getInt("alarm1"));
         }
     }
 }

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main2Activity extends AppCompatActivity {
     String s, f;
@@ -20,14 +21,14 @@ public class Main2Activity extends AppCompatActivity {
     TextView text,t;
     EditText title;
     int count = 0;
-    public static HashMap<String, Integer> Alarm;
+    public static Map<String, Integer> Alarm = new HashMap<String, Integer>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         setup();
         setDate();
-        Alarm = new HashMap<String, Integer>();
         sd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -74,6 +74,7 @@ public class AlarmActivty extends Activity {
             }
         });
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //바깥레이어 클릭시 안닫히게

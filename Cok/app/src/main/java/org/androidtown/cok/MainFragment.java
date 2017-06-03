@@ -138,7 +138,7 @@ public class MainFragment extends Fragment {
             bar.incrementProgressBy(1);
         }
         public void notifi(int i){
-            if(i==0)
+            if(i==100)
                 NotificationSomethings();
         }
     }

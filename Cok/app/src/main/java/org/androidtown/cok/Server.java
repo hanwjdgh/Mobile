@@ -26,6 +26,7 @@ public class Server {
             public void run() {
                 HttpURLConnection con = getConnection("POST","/add");
                 JSONObject jsonObject = new JSONObject();
+                JSONObject json = new JSONObject();
                 try {
                     jsonObject.put("master",master);
                     jsonObject.put("phonenum",phoneNum);
@@ -34,6 +35,16 @@ public class Server {
                     jsonObject.put("start",start);
                     jsonObject.put("finish",finish);
                     jsonObject.put("vote",vote);
+
+//                    Set<Map.Entry<String, Integer>> entries = Map.entrySet();
+//                    Iterator<Map.Entry<String, Integer>> i = entries.iterator();
+//
+//                    while(i.hasNext()) {
+//                        Map.Entry<String, Integer> entry = i.next();
+//                        json.put(entry.getKey(),entry.getValue());
+//                    }
+//                    jsonObject.put("map",json);
+
                 } catch (Exception e) {
                 }
                 sendJson(con, jsonObject);
