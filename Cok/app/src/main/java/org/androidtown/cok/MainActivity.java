@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     Server server = new Server();
     public static int votenum=0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,30 +73,51 @@ public class MainActivity extends AppCompatActivity {
             String finish = data.getStringExtra("finish");
 
             if(outName.length()>0&&num.length()>0) {
+                InsertMap(start,finish);
                 makefragment(phoneNum,outName, num, calculate(start,finish)+"");
-                server.Insertproject(phoneNum,phoneNum,outName, num,start,finish);
+                server.Insertproject(phoneNum,phoneNum,outName, num,start,finish,0);
+                String title = phoneNum.replace("+",outName);
+                server.maketable(title,VoteActivtiy.data);
             }
         }
     }
+    public void InsertMap(String start, String finish) {
+        String[] arr1 = start.split("-");
+        int tem = calculate(start, finish);
+        int year = Integer.parseInt(arr1[0]), mon = Integer.parseInt(arr1[1]), day = Integer.parseInt(arr1[2]);
+        for (int j = 0; j < tem; j++) {
+            VoteActivtiy.data.put(year + "-" + mon + "-" + day, 0);
 
+            if (mon == 2 && day == 28) {
+                mon += 1;
+                day = 1;
+            } else if ((mon == 4 || mon == 6 || mon == 9 || mon == 11) && day == 30) {
+                mon += 1;
+                day = 1;
+            } else if ((mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12) && day == 31) {
+                if (mon == 12)
+                    mon = 1;
+                else
+                    mon += 1;
+                day = 1;
+            } else
+                day++;
+        }
+    }
     public int calculate(String start, String finish){
         String[] arr1 = start.split("-");
         String[] arr2 = finish.split("-");
         int stem=0,ftem=0;
-        for(int i=0; i<Integer.parseInt(arr1[1]);i++){
+        for(int i=0; i<Integer.parseInt(arr1[1])-1;i++){
             stem+=arr[i];
         }
         stem+=Integer.parseInt(arr1[2]);
-        for(int i=0; i<Integer.parseInt(arr2[1]);i++){
+        for(int i=0; i<Integer.parseInt(arr2[1])-1;i++){
             ftem+=arr[i];
         }
         ftem+=Integer.parseInt(arr2[2]);
-        if(ftem-stem>=0||ftem-stem+1>=0) {
-            if (Integer.parseInt(arr1[1]) == Integer.parseInt(arr2[1]))
+        if(ftem-stem>=0||ftem-stem+1>=0)
                 return ftem - stem;
-            else
-                return ftem - stem + 1;
-        }
         else
             return 0;
     }

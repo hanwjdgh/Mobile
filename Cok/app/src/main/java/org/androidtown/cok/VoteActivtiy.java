@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by LEE on 2017-05-30.
@@ -26,7 +27,7 @@ public class VoteActivtiy extends AppCompatActivity {
     String[] arr1,arr2;
     Server server = new Server();
     MainActivity mainActivity = new MainActivity();
-    public static HashMap<String, Integer> data;
+    public static Map<String, Integer> data = new HashMap<>();
     Bundle bundle2;
     String s;
     Button btn;
@@ -72,7 +73,7 @@ public class VoteActivtiy extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                server.Insertproject(msg1,phoneNum,project,meeting,start,finish);
+                server.Insertproject(msg1,phoneNum,project,meeting,start,finish,1);
                 //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
                 Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
                 startActivity(inte);
