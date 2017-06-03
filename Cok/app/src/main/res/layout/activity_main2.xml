@@ -55,19 +55,6 @@
         android:text="0"
         android:textSize="30sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="알  람       :"
-        android:id="@+id/alarm"
-        android:textSize="24dp"
-        android:layout_below="@+id/fd_button"
-        android:layout_alignLeft="@+id/fd_button"
-        android:layout_alignStart="@+id/fd_button"
-        android:layout_marginTop="33dp"
-        android:layout_toLeftOf="@+id/finish"
-        android:layout_toStartOf="@+id/finish" />
-
     <Button
         android:id="@+id/buttonm"
         android:layout_width="wrap_content"
@@ -127,15 +114,7 @@
         android:background="@android:color/transparent"
         android:text="Button"
         android:textSize="24sp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/abtn"
-        android:text="선택하기"
-        android:layout_alignBaseline="@+id/alarm"
-        android:layout_alignBottom="@+id/alarm"
-        android:layout_toRightOf="@+id/finish"
-        android:layout_toEndOf="@+id/finish" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

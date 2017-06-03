@@ -41,28 +41,28 @@ public class AlarmActivty extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        if(Main2Activity.Alarm.get("7")==0)
-                            Main2Activity.Alarm.put("7",1);
+                        if(Main3Activity.Alarm.get("7")==0)
+                            Main3Activity.Alarm.put("7",1);
                         else
-                            Main2Activity.Alarm.put("7",0);
+                            Main3Activity.Alarm.put("7",0);
                         break;
                     case 1:
-                        if(Main2Activity.Alarm.get("5")==0)
-                            Main2Activity.Alarm.put("5",1);
+                        if(Main3Activity.Alarm.get("5")==0)
+                            Main3Activity.Alarm.put("5",1);
                         else
-                            Main2Activity.Alarm.put("5",0);
+                            Main3Activity.Alarm.put("5",0);
                         break;
                     case 2:
-                        if(Main2Activity.Alarm.get("3")==0)
-                            Main2Activity.Alarm.put("3",1);
+                        if(Main3Activity.Alarm.get("3")==0)
+                            Main3Activity.Alarm.put("3",1);
                         else
-                            Main2Activity.Alarm.put("3",0);
+                            Main3Activity.Alarm.put("3",0);
                         break;
                     case 3:
-                        if(Main2Activity.Alarm.get("1")==0)
-                            Main2Activity.Alarm.put("1",1);
+                        if(Main3Activity.Alarm.get("1")==0)
+                            Main3Activity.Alarm.put("1",1);
                         else
-                            Main2Activity.Alarm.put("1",0);
+                            Main3Activity.Alarm.put("1",0);
                         break;
                 }
             }

@@ -5,10 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,6 +100,7 @@ public class VoteActivtiy extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
     }
+
     private void settingMap(JSONArray jsonArray)throws JSONException{
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
@@ -109,6 +108,7 @@ public class VoteActivtiy extends AppCompatActivity {
         }
     }
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
+        String str;
         JSONObject order = jsonArray.getJSONObject(0);
         meeting = order.getString("meeting");
         start = order.getString("start");
@@ -122,9 +122,21 @@ public class VoteActivtiy extends AppCompatActivity {
         int year = Integer.parseInt(arr1[0]), mon = Integer.parseInt(arr1[1]), day = Integer.parseInt(arr1[2]);
 
         for (int j = 0; j < tem; j++) {
-            s=year + "-" + mon + "-" + day;
-            data.put(year + "-" + mon + "-" + day, 0);
-            makefragment(year + "-" + mon + "-" + day);
+            if(mon<10){
+                if(day<10)
+                    str = year + "-" + "0"+mon + "-" + "0"+day;
+                else
+                    str = year + "-" + "0"+mon + "-" + day;
+            }
+            else{
+                if(day<10)
+                    str = year + "-" + mon + "-" + "0"+day;
+                else
+                    str = year + "-" + mon + "-" + day;
+            }
+
+            s=str;
+            makefragment(str);
 
             if (mon == 2 && day == 28) {
                 mon += 1;

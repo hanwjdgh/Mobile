@@ -21,6 +21,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by LEE on 2017-05-17.
@@ -28,11 +30,11 @@ import java.net.HttpURLConnection;
 
 public class Main3Activity extends AppCompatActivity  {
     TextView text1,text2,txt;
-    Button btn,btn2,btn3;
+    Button btn,btn2,btn3,abtn;
     String title,mas,title1;
-    VoteActivtiy vote = new VoteActivtiy();
     String phoneNum,number;
     Server server = new Server();
+    public static Map<String, Integer> Alarm = new HashMap<String, Integer>();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -40,12 +42,7 @@ public class Main3Activity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         phoneNum = getPhoneNum();
-        text1 = (TextView)findViewById(R.id.textView5);
-        text2 =(TextView)findViewById(R.id.textView6);
-        txt = (TextView)findViewById(R.id.txt);
-        btn = (Button)findViewById(R.id.btn);
-        btn2 = (Button)findViewById(R.id.btn2);
-        btn3 = (Button)findViewById(R.id.btn3);
+        setup();
         Intent data=getIntent();
         final Bundle bundle = data.getExtras();
         mas =bundle.getString("master").toString();
@@ -92,9 +89,30 @@ public class Main3Activity extends AppCompatActivity  {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                server.addAlarm(mas,phoneNum,title,Alarm);
                 finish();
             }
         });
+        abtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Alarm.put("1",0);
+                Alarm.put("3",0);
+                Alarm.put("5",0);
+                Alarm.put("7",0);
+                Intent intent= new Intent(Main3Activity.this,AlarmActivty.class);
+                startActivity(intent);
+            }
+        });
+    }
+    public void setup(){
+        text1 = (TextView)findViewById(R.id.textView5);
+        text2 =(TextView)findViewById(R.id.textView6);
+        txt = (TextView)findViewById(R.id.txt);
+        btn = (Button)findViewById(R.id.btn);
+        btn2 = (Button)findViewById(R.id.btn2);
+        btn3 = (Button)findViewById(R.id.btn3);
+        abtn=(Button)findViewById(R.id.abtn);
     }
     private void meetdate(JSONArray jsonArray) throws JSONException {
         String str="";

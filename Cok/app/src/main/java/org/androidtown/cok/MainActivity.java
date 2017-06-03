@@ -20,10 +20,10 @@ import java.net.HttpURLConnection;
 public class MainActivity extends AppCompatActivity {
     ImageButton mbutton;
     String phoneNum;
-    int[] arr = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int[] arr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     Server server = new Server();
-    public static int votenum=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,21 +31,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SplachActivity.class));
 
         phoneNum = getPhoneNum();
-        //Toast.makeText(getApplicationContext(),phoneNum,Toast.LENGTH_SHORT).show();
-            new Thread() {
-                @Override
-                public void run() {
-                    System.out.println("!!!");
-                    HttpURLConnection con = server.getConnection("GET","/phonenum/" + phoneNum);
-                    System.out.println("Connection done");
-                    try {
-                        System.out.println("code" + con.getResponseCode());
-                        arrayToobject(server.readJson(con));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+        new Thread() {
+            @Override
+            public void run() {
+                System.out.println("!!!");
+                HttpURLConnection con = server.getConnection("GET", "/phonenum/" + phoneNum);
+                System.out.println("Connection done");
+                try {
+                    System.out.println("code" + con.getResponseCode());
+                    arrayToobject(server.readJson(con));
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            }.start();
+            }
+        }.start();
 
 
         mbutton = (ImageButton) findViewById(R.id.m_button);
@@ -59,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public String getPhoneNum(){
+
+    public String getPhoneNum() {
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         return telephonyManager.getLine1Number();
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -72,21 +73,34 @@ public class MainActivity extends AppCompatActivity {
             String start = data.getStringExtra("start");
             String finish = data.getStringExtra("finish");
 
-            if(outName.length()>0&&num.length()>0) {
-                InsertMap(start,finish);
-                makefragment(phoneNum,outName, num, calculate(start,finish)+"");
-                server.Insertproject(phoneNum,phoneNum,outName, num,start,finish,0);
-                String title = phoneNum.replace("+",outName);
-                server.maketable(title,VoteActivtiy.data);
+            if (outName.length() > 0 && num.length() > 0) {
+                InsertMap(start, finish);
+                makefragment(phoneNum, outName, num, calculate(start, finish) + "");
+                server.Insertproject(phoneNum, phoneNum, outName, num, start, finish, 0);
+                String title = phoneNum.replace("+", outName);
+                server.maketable(title, VoteActivtiy.data);
             }
         }
     }
+
     public void InsertMap(String start, String finish) {
         String[] arr1 = start.split("-");
+        String str;
         int tem = calculate(start, finish);
         int year = Integer.parseInt(arr1[0]), mon = Integer.parseInt(arr1[1]), day = Integer.parseInt(arr1[2]);
         for (int j = 0; j < tem; j++) {
-            VoteActivtiy.data.put(year + "-" + mon + "-" + day, 0);
+            if (mon < 10) {
+                if (day < 10)
+                    str = year + "-" + "0" + mon + "-" + "0" + day;
+                else
+                    str = year + "-" + "0" + mon + "-" + day;
+            } else {
+                if (day < 10)
+                    str = year + "-" + mon + "-" + "0" + day;
+                else
+                    str = year + "-" + mon + "-" + day;
+            }
+            VoteActivtiy.data.put(str, 0);
 
             if (mon == 2 && day == 28) {
                 mon += 1;
@@ -104,20 +118,21 @@ public class MainActivity extends AppCompatActivity {
                 day++;
         }
     }
-    public int calculate(String start, String finish){
+
+    public int calculate(String start, String finish) {
         String[] arr1 = start.split("-");
         String[] arr2 = finish.split("-");
-        int stem=0,ftem=0;
-        for(int i=0; i<Integer.parseInt(arr1[1])-1;i++){
-            stem+=arr[i];
+        int stem = 0, ftem = 0;
+        for (int i = 0; i < Integer.parseInt(arr1[1]) - 1; i++) {
+            stem += arr[i];
         }
-        stem+=Integer.parseInt(arr1[2]);
-        for(int i=0; i<Integer.parseInt(arr2[1])-1;i++){
-            ftem+=arr[i];
+        stem += Integer.parseInt(arr1[2]);
+        for (int i = 0; i < Integer.parseInt(arr2[1]) - 1; i++) {
+            ftem += arr[i];
         }
-        ftem+=Integer.parseInt(arr2[2]);
-        if(ftem-stem>=0||ftem-stem+1>=0)
-                return ftem - stem;
+        ftem += Integer.parseInt(arr2[2]);
+        if (ftem - stem >= 0 || ftem - stem + 1 >= 0)
+            return ftem - stem;
         else
             return 0;
     }
@@ -130,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("master", master);
         bundle.putString("Project", outName);
         bundle.putString("mCount", num);
-        bundle.putString("day",day);
+        bundle.putString("day", day);
         cf.setArguments(bundle);
         tr.add(R.id.frame, cf, "counter");
         tr.commit();
@@ -157,11 +172,7 @@ public class MainActivity extends AppCompatActivity {
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
-            makefragment(order.getString("master"),order.getString("project"), order.getInt("meeting") + "",calculate(order.getString("start"),order.getString("finish"))+"");
-            Main2Activity.Alarm.put("7",order.getInt("alarm7"));
-            Main2Activity.Alarm.put("5",order.getInt("alarm5"));
-            Main2Activity.Alarm.put("3",order.getInt("alarm3"));
-            Main2Activity.Alarm.put("1",order.getInt("alarm1"));
+            makefragment(order.getString("master"), order.getString("project"), order.getInt("meeting") + "", calculate(order.getString("start"), order.getString("finish")) + "");
         }
     }
 }

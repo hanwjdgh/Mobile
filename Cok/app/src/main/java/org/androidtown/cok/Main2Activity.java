@@ -16,12 +16,11 @@ import java.util.Map;
 
 public class Main2Activity extends AppCompatActivity {
     String s, f;
-    Button btn_up, btn_down, abtn;
+    Button btn_up, btn_down;
     Button Fbutton, sd_button, fd_button;
-    TextView text,t;
+    TextView text, t;
     EditText title;
     int count = 0;
-    public static Map<String, Integer> Alarm = new HashMap<String, Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,17 +62,6 @@ public class Main2Activity extends AppCompatActivity {
                 finish();
             }
         });
-        abtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Alarm.put("1",0);
-                Alarm.put("3",0);
-                Alarm.put("5",0);
-                Alarm.put("7",0);
-                Intent intent= new Intent(Main2Activity.this,AlarmActivty.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -83,15 +71,27 @@ public class Main2Activity extends AppCompatActivity {
             Bundle bundle = data.getExtras();
             sd_button.setText("시작일 :" + bundle.getInt("YEAR") + " 년 " + bundle.getInt("MONTH") + " 월 " + bundle.getInt("DAY") + " 일");
             fd_button.setText("종료일 :" + bundle.getInt("Year") + " 년 " + bundle.getInt("Month") + " 월 " + bundle.getInt("Day") + " 일");
-            if (bundle.getInt("MONTH") < 10)
-                s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
-            else {
-                s = bundle.getInt("YEAR") + "-" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
+            if (bundle.getInt("MONTH") < 10) {
+                if (bundle.getInt("DAY") < 10)
+                    s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + "0" + bundle.getInt("DAY");
+                else
+                    s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
+            } else {
+                if (bundle.getInt("DAY") < 10)
+                    s = bundle.getInt("YEAR") + "-" + bundle.getInt("MONTH") + "-" + "0" + bundle.getInt("DAY");
+                else
+                    s = bundle.getInt("YEAR") + "-" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
             }
             if (bundle.getInt("Month") < 10) {
-                f = bundle.getInt("Year") + "-" + "0" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
+                if (bundle.getInt("Day") < 10)
+                    f = bundle.getInt("Year") + "-" + "0" + bundle.getInt("Month") + "-" + "0" + bundle.getInt("Day");
+                else
+                    f = bundle.getInt("Year") + "-" + "0" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
             } else {
-                f = bundle.getInt("Year") + "-" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
+                if (bundle.getInt("Day") < 10)
+                    f = bundle.getInt("Year") + "-" + bundle.getInt("Month") + "-" + "0" + bundle.getInt("Day");
+                else
+                    f = bundle.getInt("Year") + "-" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
             }
         }
     }
@@ -110,7 +110,7 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void setup() {
-        t=(TextView)findViewById(R.id.tt);
+        t = (TextView) findViewById(R.id.tt);
         title = (EditText) findViewById(R.id.editText3);
         btn_up = (Button) findViewById(R.id.buttonp);
         btn_down = (Button) findViewById(R.id.buttonm);
@@ -118,7 +118,6 @@ public class Main2Activity extends AppCompatActivity {
         Fbutton = (Button) findViewById(R.id.finish);
         sd_button = (Button) findViewById(R.id.sd_dutton);
         fd_button = (Button) findViewById(R.id.fd_button);
-        abtn=(Button)findViewById(R.id.abtn);
         btn_up.setOnClickListener(listener);
         btn_down.setOnClickListener(listener);
     }
