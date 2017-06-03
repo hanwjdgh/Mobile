@@ -28,7 +28,8 @@
         <activity android:name=".Main2Activity"></activity>
         <activity android:name=".Main3Activity"></activity>
         <activity android:name=".Calendar"></activity>
-
+        <activity android:name=".AlarmActivty"
+            android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".VoteActivtiy">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
