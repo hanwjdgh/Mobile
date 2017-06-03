@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class Server {
 
-    public void Insertproject(final String master,final String phoneNum, final String name, final String num, final String start, final String finish) {
+    public void Insertproject(final String master,final String phoneNum, final String name, final String num, final String start, final String finish,final int vote) {
         new Thread() {
             @Override
             public void run() {
@@ -29,7 +29,7 @@ public class Server {
                     jsonObject.put("meeting", Integer.parseInt(num));
                     jsonObject.put("start",start);
                     jsonObject.put("finish",finish);
-<<<<<<< HEAD
+
                     jsonObject.put("vote",vote);
 
 //                    Set<Map.Entry<String, Integer>> entries = Map.entrySet();
@@ -41,8 +41,7 @@ public class Server {
 //                    }
 //                    jsonObject.put("map",json);
 
-=======
->>>>>>> parent of 879b7a5... Add connection
+
                 } catch (Exception e) {
                 }
                 sendJson(con, jsonObject);
