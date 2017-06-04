@@ -18,9 +18,10 @@ public class Main2Activity extends AppCompatActivity {
     String s, f;
     Button btn_up, btn_down;
     Button Fbutton, sd_button, fd_button;
-    TextView text, t;
+    Button Pup,Pdwn;
+    TextView text, t,ptxt;
     EditText title;
-    int count = 0;
+    int count = 0,pcnt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent intent = getIntent();
                 Bundle bundle = intent.getExtras();
                 bundle.putString("title", title.getText().toString());
+                bundle.putString("people",pcnt+"");
                 bundle.putString("number", count + "");
                 bundle.putString("start", s);
                 bundle.putString("finish", f);
@@ -120,7 +122,32 @@ public class Main2Activity extends AppCompatActivity {
         fd_button = (Button) findViewById(R.id.fd_button);
         btn_up.setOnClickListener(listener);
         btn_down.setOnClickListener(listener);
+        ptxt = (TextView)findViewById(R.id.textView12);
+        Pup = (Button)findViewById(R.id.button4);
+        Pdwn = (Button)findViewById(R.id.button2);
+        Pup.setOnClickListener(listen);
+        Pdwn.setOnClickListener(listen);
     }
+    View.OnClickListener listen = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            switch (v.getId()){
+                case R.id.button4:
+                    pcnt++;
+                    ptxt.setText("" + pcnt);
+                    break;
+                case R.id.button2:
+                    pcnt--;
+                    if (pcnt < 0) {
+                        Toast.makeText(getApplicationContext(), "음수ㄴㄴ", Toast.LENGTH_SHORT).show();
+                        pcnt = 0;
+                        break;
+                    }
+                    ptxt.setText("" + pcnt);
+                    break;
+            }
+        }
+    };
 
     View.OnClickListener listener = new View.OnClickListener() {
         @Override

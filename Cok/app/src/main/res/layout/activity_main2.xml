@@ -12,12 +12,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="69dp"
         android:text="프로잭트 명 : "
         android:textSize="24sp"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/buttonm"
-        android:layout_toStartOf="@+id/buttonm" />
+        android:layout_alignRight="@+id/tt"
+        android:layout_alignEnd="@+id/tt" />
 
     <EditText
         android:id="@+id/editText3"
@@ -43,6 +43,17 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="인원 수    :  "
+        android:textSize="24sp"
+        android:layout_below="@+id/buttonm"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +63,19 @@
         android:layout_marginStart="14dp"
         android:layout_toEndOf="@+id/buttonm"
         android:layout_toRightOf="@+id/buttonm"
+        android:text="0"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
         android:text="0"
         android:textSize="30sp" />
 
@@ -68,15 +92,38 @@
         android:textSize="36sp" />
 
     <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="-"
+        android:textSize="36sp"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignLeft="@+id/buttonm"
+        android:layout_alignStart="@+id/buttonm" />
+
+    <Button
         android:id="@+id/buttonp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sd_dutton"
-        android:layout_alignEnd="@+id/editText3"
-        android:layout_alignRight="@+id/editText3"
         android:background="@android:color/transparent"
         android:text="+"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/buttonm"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="+"
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignLeft="@+id/buttonp"
+        android:layout_alignStart="@+id/buttonp" />
 
     <Button
         android:id="@+id/finish"
@@ -109,7 +156,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignRight="@+id/buttonp"
         android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/buttonm"
+        android:layout_below="@+id/textView9"
         android:layout_marginTop="58dp"
         android:background="@android:color/transparent"
         android:text="Button"

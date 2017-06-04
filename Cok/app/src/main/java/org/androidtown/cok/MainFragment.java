@@ -20,15 +20,16 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+
 /**
  * Created by GE62 on 2017-05-15.
  */
 
 public class MainFragment extends Fragment {
-    TextView pName;
-    TextView mCount;
-    TextView mcount;
-    TextView percent;
+    TextView pName,mCount,mcount;
     ProgressBar bar;
     ProgressHandler handler;
     Button btn;
@@ -37,7 +38,8 @@ public class MainFragment extends Fragment {
     Context mainContext;
     Bundle extra;
     String mas;
-
+    Map<String, Integer> Alam;
+    int cur;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -48,16 +50,16 @@ public class MainFragment extends Fragment {
         mcount = (TextView) rootView.findViewById(R.id.text3);
         day = (TextView) rootView.findViewById(R.id.day);
         btn = (Button) rootView.findViewById(R.id.btn);
-        //percent = (TextView)rootView.findViewById(R.id.percent) ;
 
         handler = new ProgressHandler();
         extra = getArguments();
         mas = extra.getString("master").toString();
         pName.setText(extra.getString("Project").toString());
-        //mCount.setText(extra.getString("mCount").toString());
-        mcount.setText(extra.getString("mCount").toString());
-        day.setText(extra.getString("day").toString() + "일");
-
+        mCount.setText(extra.getString("mCount").toString());
+        mcount.setText(extra.getString("mcount").toString());
+        String tm = extra.getString("day").toString();
+        cur = extra.getInt("cur");
+        day.setText((Integer.parseInt(tm)-cur) + "일");
         bar.setMax(Integer.parseInt(extra.getString("day")));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,23 +78,23 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-    public MainFragment(Context _context) {
+    public MainFragment(Context _context, Map map) {
         mainContext = _context;
+        Alam = map;
     }
 
     public void onStart() {
         super.onStart();
-        bar.setProgress(0);
+        bar.setProgress(cur-1);
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
                 try {
                     int i;
-                    for (i = 0; i < Integer.parseInt(extra.getString("day")) && isRunning; i++) {
-                        Thread.sleep(5000);
+                    for (i = cur-1; i < Integer.parseInt(extra.getString("day")) && isRunning; i++) {
+                        Thread.sleep(1000);
                         Message msg = handler.obtainMessage();
                         handler.sendMessage(msg);
                         handler.notifi(i);
-
                     }
                 } catch (Exception ex) {
                     Log.e("MainActivity", "Exception in processing message.", ex);
@@ -103,8 +105,6 @@ public class MainFragment extends Fragment {
         thread1.start();
     }
     public void NotificationSomethings() {
-
-
         Resources res = getResources();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(mainContext);
@@ -138,6 +138,7 @@ public class MainFragment extends Fragment {
             bar.incrementProgressBy(1);
         }
         public void notifi(int i){
+//            if(i==Alam.get("1")||i==Alam.get("3")||i==Alam.get("5")||i==Alam.get("7"))
             if(i==100)
                 NotificationSomethings();
         }

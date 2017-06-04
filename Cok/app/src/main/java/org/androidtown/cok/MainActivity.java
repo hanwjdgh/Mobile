@@ -9,12 +9,17 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,13 +28,18 @@ public class MainActivity extends AppCompatActivity {
     int[] arr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     Server server = new Server();
+    public static Map<String, Integer> Ala = new HashMap<String, Integer>();
+    public static int check=0;
+    String setCurDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startActivity(new Intent(this, SplachActivity.class));
-
+        if(check==0) {
+            startActivity(new Intent(this, SplachActivity.class));
+            check++;
+        }
         phoneNum = getPhoneNum();
         new Thread() {
             @Override
@@ -43,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             }
         }.start();
 
@@ -58,7 +69,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    private void setDate() {
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat SettingFormat = new SimpleDateFormat("yyyy-MM-dd");
+        setCurDate = SettingFormat.format(date);
+    }
     public String getPhoneNum() {
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         return telephonyManager.getLine1Number();
@@ -69,16 +85,20 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             String outName = data.getStringExtra("title");
+            String people = data.getStringExtra("people");
             String num = data.getStringExtra("number");
             String start = data.getStringExtra("start");
             String finish = data.getStringExtra("finish");
-
-            if (outName.length() > 0 && num.length() > 0) {
+            setDate();
+            int cur = calculate(start,setCurDate);
+            System.out.print("123@@ " +cur);
+            if (outName.length() > 0 && num.length() > 0 && people.length() > 0) {
                 InsertMap(start, finish);
-                makefragment(phoneNum, outName, num, calculate(start, finish) + "");
-                server.Insertproject(phoneNum, phoneNum, outName, num, start, finish, 0);
+                makefragment(phoneNum, outName, people, num, calculate(start, finish) + "",cur);
+                server.Insertproject(phoneNum, phoneNum, outName, num, start, finish, 0, Integer.parseInt(people));
                 String title = phoneNum.replace("+", outName);
                 server.maketable(title, VoteActivtiy.data);
+                //server.addAlarm(phoneNum,phoneNum,title,Main3Activity.Alarm);
             }
         }
     }
@@ -131,24 +151,46 @@ public class MainActivity extends AppCompatActivity {
             ftem += arr[i];
         }
         ftem += Integer.parseInt(arr2[2]);
-        if (ftem - stem >= 0 || ftem - stem + 1 >= 0)
+        if (ftem - stem >= 0)
             return ftem - stem;
         else
-            return 0;
+            return -1;
     }
 
-    public void makefragment(String master, String outName, String num, String day) {
+    public void makefragment(final String master, final String outName, String peo, String num, String day, int cur) {
+        new Thread() {
+            @Override
+            public void run() {
+                HttpURLConnection conn = server.getConnection("GET", "/galarm/" + master + "/" + phoneNum + "/" + outName);
+                try {
+                    System.out.println("code" + conn.getResponseCode());
+                    setalarm(server.readJson(conn));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        MainFragment cf = new MainFragment(MainActivity.this);
+        MainFragment cf = new MainFragment(MainActivity.this,Ala);
         Bundle bundle = new Bundle();
         bundle.putString("master", master);
         bundle.putString("Project", outName);
-        bundle.putString("mCount", num);
+        bundle.putString("mCount", peo);
+        bundle.putString("mcount", num);
         bundle.putString("day", day);
+        bundle.putInt("cur",cur);
         cf.setArguments(bundle);
         tr.add(R.id.frame, cf, "counter");
         tr.commit();
+    }
+
+    private void setalarm(JSONArray jsonArray) throws JSONException {
+        JSONObject order = jsonArray.getJSONObject(0);
+        Ala.put("1", order.getInt("alarm1"));
+        Ala.put("3", order.getInt("alarm3"));
+        Ala.put("5", order.getInt("alarm5"));
+        Ala.put("7", order.getInt("alarm7"));
     }
 
     @Override
@@ -172,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject order = jsonArray.getJSONObject(i);
-            makefragment(order.getString("master"), order.getString("project"), order.getInt("meeting") + "", calculate(order.getString("start"), order.getString("finish")) + "");
+            makefragment(order.getString("master"), order.getString("project"), order.getInt("people") + "", order.getInt("meeting") + "", calculate(order.getString("start"), order.getString("finish")) + "",calculate(order.getString("start"),setCurDate));
         }
     }
 }

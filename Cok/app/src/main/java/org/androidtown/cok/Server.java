@@ -19,7 +19,7 @@ import java.util.Set;
 public class Server {
 
 
-    public void Insertproject(final String master,final String phoneNum, final String name, final String num, final String start, final String finish,final int vote) {
+    public void Insertproject(final String master,final String phoneNum, final String name, final String num, final String start, final String finish,final int vote, final int peo) {
         new Thread() {
             @Override
             public void run() {
@@ -33,7 +33,7 @@ public class Server {
                     jsonObject.put("start",start);
                     jsonObject.put("finish",finish);
                     jsonObject.put("vote",vote);
-
+                    jsonObject.put("peo",peo);
                 } catch (Exception e) {
                 }
                 sendJson(con, jsonObject);

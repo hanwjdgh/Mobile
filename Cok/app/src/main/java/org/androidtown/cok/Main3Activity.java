@@ -90,6 +90,9 @@ public class Main3Activity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 server.addAlarm(mas,phoneNum,title,Alarm);
+                MainActivity.check++;
+                Intent inte = new Intent(Main3Activity.this, MainActivity.class);
+                startActivity(inte);
                 finish();
             }
         });
@@ -114,6 +117,18 @@ public class Main3Activity extends AppCompatActivity  {
         btn3 = (Button)findViewById(R.id.btn3);
         abtn=(Button)findViewById(R.id.abtn);
     }
+    private void setalarm(JSONArray jsonArray) throws JSONException{
+        JSONObject order = jsonArray.getJSONObject(0);
+        System.out.println("@@@"+order.getInt("alarm1"));
+        System.out.println(order.getInt("alarm3"));
+        System.out.println(order.getInt("alarm5"));
+        System.out.println(order.getInt("alarm7"));
+        Alarm.put("1",order.getInt("alarm1"));
+        Alarm.put("3",order.getInt("alarm3"));
+        Alarm.put("5",order.getInt("alarm5"));
+        Alarm.put("7",order.getInt("alarm7"));
+    }
+
     private void meetdate(JSONArray jsonArray) throws JSONException {
         String str="";
         for (int i = 0; i < jsonArray.length(); i++) {

@@ -24,12 +24,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/scrollView2"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="투표완료"
         android:layout_alignRight="@+id/scrollView2"
-        android:layout_alignEnd="@+id/scrollView2" />
+        android:text="Vote" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -37,5 +36,5 @@
         android:layout_alignLeft="@+id/scrollView2"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/scrollView2"
-        android:text="돌아가기" />
+        android:text="Back" />
 </RelativeLayout>

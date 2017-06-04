@@ -21,8 +21,9 @@
         android:stretchColumns="*"
         android:layout_width="346dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/tableLayout">
+        android:id="@+id/tableLayout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
         <TableRow>
             <TextView
                 android:id="@+id/text"
@@ -40,12 +41,13 @@
                 android:layout_height="match_parent" />
         </TableRow>
         <TableRow>
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:text="   인   원    :"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="    People   : "
+                android:textSize="20dp" />
             <TextView
                 android:id="@+id/text2"
                 android:layout_gravity="center"
@@ -67,12 +69,13 @@
                 android:textSize="20dp" />
         </TableRow>
         <TableRow>
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:text="  미팅 횟수 :"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:text="  Meeting  :"
+                android:textSize="20dp" />
             <TextView
                 android:layout_gravity="center"
                 android:id="@+id/text3"

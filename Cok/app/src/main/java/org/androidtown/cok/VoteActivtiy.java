@@ -32,7 +32,7 @@ public class VoteActivtiy extends AppCompatActivity {
     String phoneNum,meeting,start,finish;
     public static int setting=0;
     Intent intent;
-    int vote;
+    int vote,people;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,9 +80,10 @@ public class VoteActivtiy extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                server.Insertproject(msg1,phoneNum,project,meeting,start,finish,1);
+                server.Insertproject(msg1,phoneNum,project,meeting,start,finish,1,people);
                 //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
                 server.maketable(title,data);
+                MainActivity.check++;
                 Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
                 startActivity(inte);
                 finish();
@@ -114,6 +115,7 @@ public class VoteActivtiy extends AppCompatActivity {
         start = order.getString("start");
         finish = order.getString("finish");
         vote = order.getInt("vote");
+        people = order.getInt("people");
         if(vote==1){
             btn.setVisibility(View.GONE);
         }
