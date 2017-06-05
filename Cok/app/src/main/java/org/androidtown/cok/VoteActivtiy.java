@@ -83,7 +83,6 @@ public class VoteActivtiy extends AppCompatActivity {
                 server.Insertproject(msg1,phoneNum,project,meeting,start,finish,1,people);
                 //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
                 server.maketable(title,data);
-                MainActivity.check++;
                 Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
                 startActivity(inte);
                 finish();

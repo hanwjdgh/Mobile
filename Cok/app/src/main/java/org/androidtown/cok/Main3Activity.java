@@ -90,7 +90,6 @@ public class Main3Activity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 server.addAlarm(mas,phoneNum,title,Alarm);
-                MainActivity.check++;
                 Intent inte = new Intent(Main3Activity.this, MainActivity.class);
                 startActivity(inte);
                 finish();

@@ -29,18 +29,16 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 225;
     Server server = new Server();
     public static Map<String, Integer> Ala = new HashMap<String, Integer>();
-    public static int check=0;
     String setCurDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(check==0) {
-            startActivity(new Intent(this, SplachActivity.class));
-            check++;
-        }
+        startActivity(new Intent(this, SplachActivity.class));
+
         phoneNum = getPhoneNum();
+        setDate();
         new Thread() {
             @Override
             public void run() {
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 HttpURLConnection con = server.getConnection("GET", "/phonenum/" + phoneNum);
                 System.out.println("Connection done");
                 try {
-                    System.out.println("code" + con.getResponseCode());
+                    System.out.println("codeasd " + con.getResponseCode());
                     arrayToobject(server.readJson(con));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -89,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
             String num = data.getStringExtra("number");
             String start = data.getStringExtra("start");
             String finish = data.getStringExtra("finish");
-            setDate();
             int cur = calculate(start,setCurDate);
             System.out.print("123@@ " +cur);
             if (outName.length() > 0 && num.length() > 0 && people.length() > 0) {
@@ -98,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 server.Insertproject(phoneNum, phoneNum, outName, num, start, finish, 0, Integer.parseInt(people));
                 String title = phoneNum.replace("+", outName);
                 server.maketable(title, VoteActivtiy.data);
-                //server.addAlarm(phoneNum,phoneNum,title,Main3Activity.Alarm);
             }
         }
     }

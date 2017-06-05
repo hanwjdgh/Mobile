@@ -85,16 +85,16 @@ public class MainFragment extends Fragment {
 
     public void onStart() {
         super.onStart();
-        bar.setProgress(cur-1);
+        bar.setProgress(cur);
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
                 try {
                     int i;
-                    for (i = cur-1; i < Integer.parseInt(extra.getString("day")) && isRunning; i++) {
-                        Thread.sleep(1000);
+                    for (i = 0; i < Integer.parseInt(extra.getString("day")) && isRunning; i--) {
+                        Thread.sleep(2000);
                         Message msg = handler.obtainMessage();
                         handler.sendMessage(msg);
-                        handler.notifi(i);
+                        handler.notifi(Integer.parseInt(extra.getString("day"))-cur);
                     }
                 } catch (Exception ex) {
                     Log.e("MainActivity", "Exception in processing message.", ex);
@@ -138,8 +138,9 @@ public class MainFragment extends Fragment {
             bar.incrementProgressBy(1);
         }
         public void notifi(int i){
-//            if(i==Alam.get("1")||i==Alam.get("3")||i==Alam.get("5")||i==Alam.get("7"))
-            if(i==100)
+            String str = "";
+            str+=i;
+            if(Alam.get(str)==1)
                 NotificationSomethings();
         }
     }
