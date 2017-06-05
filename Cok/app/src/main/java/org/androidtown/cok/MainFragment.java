@@ -1,5 +1,6 @@
 package org.androidtown.cok;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -40,6 +41,7 @@ public class MainFragment extends Fragment {
     String mas;
     Map<String, Integer> Alam;
     int cur;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +77,7 @@ public class MainFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         return rootView;
     }
 
@@ -91,10 +94,9 @@ public class MainFragment extends Fragment {
                 try {
                     int i;
                     for (i = 0; i < Integer.parseInt(extra.getString("day")) && isRunning; i--) {
-                        Thread.sleep(2000);
+                        Thread.sleep(6000);
                         Message msg = handler.obtainMessage();
                         handler.sendMessage(msg);
-                        handler.notifi(Integer.parseInt(extra.getString("day"))-cur);
                     }
                 } catch (Exception ex) {
                     Log.e("MainActivity", "Exception in processing message.", ex);
@@ -104,44 +106,12 @@ public class MainFragment extends Fragment {
         isRunning = true;
         thread1.start();
     }
-    public void NotificationSomethings() {
-        Resources res = getResources();
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(mainContext);
-
-        builder.setContentTitle("상태바 드래그시 보이는 타이틀")
-                .setContentText("상태바 드래그시 보이는 서브타이틀")
-                .setTicker("상태바 한줄 메시지")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(res, R.mipmap.ic_launcher))
-                .setAutoCancel(true)
-                .setWhen(System.currentTimeMillis())
-                .setDefaults(Notification.DEFAULT_ALL);
-
-
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            builder.setCategory(Notification.CATEGORY_MESSAGE)
-                    .setPriority(Notification.PRIORITY_HIGH)
-                    .setVisibility(Notification.VISIBILITY_PUBLIC);
-        }
-
-        NotificationManager nm = (NotificationManager) mainContext.getSystemService(mainContext.NOTIFICATION_SERVICE);
-        nm.notify(1234, builder.build());
-    }
-
-
 
 
     public class ProgressHandler extends Handler {
         public void handleMessage(Message msg) {
             bar.incrementProgressBy(1);
         }
-        public void notifi(int i){
-            String str = "";
-            str+=i;
-            if(Alam.get(str)==1)
-                NotificationSomethings();
-        }
+
     }
 }

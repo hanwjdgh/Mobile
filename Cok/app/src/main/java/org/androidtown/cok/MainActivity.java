@@ -1,5 +1,7 @@
 package org.androidtown.cok;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Server server = new Server();
     public static Map<String, Integer> Ala = new HashMap<String, Integer>();
     String setCurDate;
-
+    int cnt=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
             String start = data.getStringExtra("start");
             String finish = data.getStringExtra("finish");
             int cur = calculate(start,setCurDate);
-            System.out.print("123@@ " +cur);
             if (outName.length() > 0 && num.length() > 0 && people.length() > 0) {
                 InsertMap(start, finish);
                 makefragment(phoneNum, outName, people, num, calculate(start, finish) + "",cur);
@@ -166,6 +167,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }.start();
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent receiverIntent = new Intent(MainActivity.this, AlarmReceive.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, cnt, receiverIntent, 0);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+100, pendingIntent );
+
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
         MainFragment cf = new MainFragment(MainActivity.this,Ala);
