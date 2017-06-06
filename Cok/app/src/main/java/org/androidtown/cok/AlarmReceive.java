@@ -5,12 +5,13 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.PowerManager;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 public class AlarmReceive extends BroadcastReceiver {
-
+    private static PowerManager.WakeLock sCpuWakeLock;
     long now = System.currentTimeMillis();
     // 현재시간을 date 변수에 저장한다.
     Date date = new Date(now);
@@ -25,6 +26,22 @@ public class AlarmReceive extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        if (sCpuWakeLock != null) {
+            return;
+        }
+        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        sCpuWakeLock = pm.newWakeLock(
+                PowerManager.SCREEN_BRIGHT_WAKE_LOCK |
+                        PowerManager.ACQUIRE_CAUSES_WAKEUP |
+                        PowerManager.ON_AFTER_RELEASE, "hi");
+
+        sCpuWakeLock.acquire();
+
+
+        if (sCpuWakeLock != null) {
+            sCpuWakeLock.release();
+            sCpuWakeLock = null;
+        }
         NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification.Builder mBuilder = new Notification.Builder(context);

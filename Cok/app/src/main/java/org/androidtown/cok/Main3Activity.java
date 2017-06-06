@@ -32,7 +32,7 @@ import java.util.Map;
 public class Main3Activity extends AppCompatActivity  {
     TextView text1,text2,txt;
     Button btn,btn2,btn3,abtn,btn4;
-    String title,mas,title1;
+    String title,mas,title1,finishd;
     String phoneNum,number;
     Server server = new Server();
     public static Map<String, Integer> Alarm = new HashMap<String, Integer>();
@@ -49,6 +49,8 @@ public class Main3Activity extends AppCompatActivity  {
         mas =bundle.getString("master").toString();
         title=bundle.getString("NAME").toString();
         number =bundle.getString("NUM").toString();
+        finishd = bundle.getString("Finish").toString();
+
         text1.setText(title);
         text2.setText(number);
 
@@ -90,7 +92,7 @@ public class Main3Activity extends AppCompatActivity  {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                server.addAlarm(mas,phoneNum,title,Alarm);
+                server.addAlarm(mas,phoneNum,title,finishd,Alarm);
                 Intent inte = new Intent(Main3Activity.this, MainActivity.class);
                 startActivity(inte);
                 finish();

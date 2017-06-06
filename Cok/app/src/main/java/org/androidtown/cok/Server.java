@@ -74,7 +74,7 @@ public class Server {
             }
         }.start();
     }
-    public void addAlarm(final String master, final String pnum, final String name, final Map map){
+    public void addAlarm(final String master, final String pnum, final String name, final String finish, final Map map){
         new Thread(){
             @Override
             public void run(){
@@ -85,6 +85,7 @@ public class Server {
                     jsonObject.put("master",master);
                     jsonObject.put("phonenum",pnum);
                     jsonObject.put("title",name);
+                    jsonObject.put("finish",finish);
                     Set<Map.Entry<String, Integer>> entries = map.entrySet();
                     Iterator<Map.Entry<String, Integer>> i = entries.iterator();
 
