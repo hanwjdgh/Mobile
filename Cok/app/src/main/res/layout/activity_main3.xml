@@ -130,4 +130,14 @@
         android:layout_toRightOf="@+id/textView6"
         android:text="Alarm"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn"
+        android:layout_marginBottom="19dp"
+        android:layout_toEndOf="@+id/btn2"
+        android:layout_toRightOf="@+id/btn2"
+        android:text="Button" />
 </RelativeLayout>

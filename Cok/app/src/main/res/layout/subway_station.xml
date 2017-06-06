@@ -1,0 +1,5086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/linearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/seoul_subway">
+        <!--경의중앙선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginLeft="239dp"
+            android:layout_marginStart="239dp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/일산"
+            android:tag="일산"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginRight="28sp"
+            android:layout_alignTop="@+id/일산"
+            android:layout_toLeftOf="@+id/일산"
+            android:layout_alignRight="@+id/일산"
+            android:id="@+id/탄현"
+            android:tag="탄현"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/운정"
+            android:tag="운정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/탄현"
+            android:layout_toLeftOf="@+id/탄현"
+            android:layout_toStartOf="@+id/탄현"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/금릉"
+            android:tag="금릉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/운정"
+            android:layout_toLeftOf="@+id/운정"
+            android:layout_toStartOf="@+id/운정"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/금촌"
+            android:tag="금촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/금릉"
+            android:layout_toLeftOf="@+id/금릉"
+            android:layout_toStartOf="@+id/금릉"
+            android:onClick="click" />
+        <ImageButton
+            android:id="@+id/월릉"
+            android:tag="월릉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/금촌"
+            android:layout_toLeftOf="@+id/금촌"
+            android:layout_toStartOf="@+id/금촌"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/파주"
+            android:tag="파주"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/월릉"
+            android:layout_toLeftOf="@+id/월릉"
+            android:layout_toStartOf="@+id/월릉"
+            android:onClick="click" />
+        <ImageButton
+            android:id="@+id/문산"
+            android:tag="문산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginRight="10sp"
+            android:layout_alignTop="@+id/파주"
+            android:layout_toLeftOf="@+id/파주"
+            android:layout_toStartOf="@+id/파주"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/풍산"
+            android:tag="풍산"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:src="@drawable/nomal_station"
+            android:layout_below="@+id/일산"
+            android:layout_toRightOf="@+id/탄현"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/백마"
+            android:tag="백마"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/nomal_station"
+            android:layout_below="@+id/풍산"
+            android:layout_marginLeft="250dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/곡산"
+            android:tag="곡산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/nomal_station"
+            android:layout_below="@+id/백마"
+            android:layout_marginLeft="250dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/대곡"
+            android:tag="대곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="14sp"
+            android:src="@drawable/translation"
+            android:layout_below="@+id/곡산"
+            android:layout_marginLeft="250dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/능곡"
+            android:tag="능곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="169dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="264dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/행신"
+            android:tag="행신"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="189dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="284dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/화전"
+            android:tag="화전"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="213dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="307dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/수색"
+            android:tag="수색"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="233dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="327dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/디지털미디어시티"
+            android:tag="디지털미디어시티"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="280dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="450dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/가좌"
+            android:tag="가좌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="279dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="477dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신촌"
+            android:tag="신촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="279dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="504dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/홍대입구"
+            android:tag="홍대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="359dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="530dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/서강대"
+            android:tag="서강대"
+            android:layout_width="13dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="400dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="534dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/공덕"
+            android:tag="공덕"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="430dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="580dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/서울역"
+            android:tag="서울역"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="354dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="630dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/용산"
+            android:tag="용산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="505dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="615dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/이촌"
+            android:tag="이촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="515dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="683dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/서빙고"
+            android:tag="서빙고"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="515dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="753dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/한남"
+            android:tag="한남"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="515dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="796dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/옥수"
+            android:tag="옥수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="495dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="836dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/응봉"
+            android:tag="응봉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="432dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="898dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/왕십리"
+            android:tag="왕십리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="352dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="958dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/청량리"
+            android:tag="청량리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="209dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="978dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/회기"
+            android:tag="회기"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="209dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="998dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/중랑"
+            android:tag="중랑"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1080dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상봉"
+            android:tag="상봉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="209dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="1130dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/망우"
+            android:tag="망우"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="209dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="1210dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/양원"
+            android:tag="양원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1248dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/구리"
+            android:tag="구리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1276dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/도농"
+            android:tag="도농"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1303dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/양정"
+            android:tag="양정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1330dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/덕소"
+            android:tag="덕소"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1358dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/도심"
+            android:tag="도심"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="228dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1379dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/팔당"
+            android:tag="팔당"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="248dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1379dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/운길산"
+            android:tag="운길산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="268dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1379dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/양수"
+            android:tag="양수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="287dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1379dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신원"
+            android:tag="신원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="305dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1379dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/국수"
+            android:tag="국수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1340dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/아신"
+            android:tag="아신"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1318dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/오빈"
+            android:tag="오빈"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1290dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/양평중앙선"
+            android:tag="양평중앙선"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1265dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/원덕"
+            android:tag="원덕"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1240dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/용문"
+            android:tag="용문"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1218dp"
+            android:onClick="click"/>
+
+        <!--경춘-->
+
+        <ImageButton
+            android:id="@+id/춘천"
+            android:tag="춘천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="328dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/남춘천"
+            android:tag="남춘천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/김유정"
+            android:tag="김유정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="270dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/강촌"
+            android:tag="강촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="245dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/백양리"
+            android:tag="백양리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="220dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/굴봉산"
+            android:tag="굴봉산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="190dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/가평"
+            android:tag="가평"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="163dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상천"
+            android:tag="상천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="135dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/청평"
+            android:tag="청평"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="115dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1452dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/대성리"
+            android:tag="대성리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1428dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/마석"
+            android:tag="마석"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1400dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/천마산"
+            android:tag="천마산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1370dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/평내호평"
+            android:tag="평내호평"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1336dp"/>
+
+        <ImageButton
+            android:id="@+id/금곡"
+            android:tag="금곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="103dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1316dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/사릉"
+            android:tag="사릉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="122dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1298dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/퇴계원"
+            android:tag="퇴계원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="138dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1282dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/별내"
+            android:tag="별내"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="154dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1264dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/갈매"
+            android:tag="갈매"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1247dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신내"
+            android:tag="신내"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="190dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1227dp"
+            android:onClick="click"/>
+
+        <!--6호선-->
+
+        <ImageButton
+            android:id="@+id/봉화산"
+            android:tag="봉화산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="75dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1270dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/화랑대"
+            android:tag="화랑대"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="116dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1230dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/태릉입구"
+            android:tag="태릉입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="1130dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/석계"
+            android:tag="석계"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="1040dp"
+            android:onClick="click"/>
+
+        android:tag="신정"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        <ImageButton
+            android:id="@+id/돌곶이"
+            android:tag="돌곶이"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="1015dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상월곡"
+            android:tag="상월곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="985dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/월곡"
+            android:tag="월곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="940dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/고려대"
+            android:tag="고려대"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="915dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/안암"
+            android:tag="안암"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="880dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/보문"
+            android:tag="보문"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="180dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="875dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/창신"
+            android:tag="창신"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="195dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="875dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/동묘앞"
+            android:tag="동묘앞"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="210dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="875dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신당"
+            android:tag="신당"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="875dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/청구"
+            android:tag="청구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="350dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="835dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/버티고개"
+            android:tag="버티고개"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="797dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/한강진"
+            android:tag="한강진"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="770dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/이태원"
+            android:tag="이태원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="740dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/녹사평"
+            android:tag="녹사평"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="700dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/삼각지"
+            android:tag="삼각지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="680dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/효창공원앞"
+            android:tag="효창공원앞"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="455dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="616dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/대흥"
+            android:tag="대흥"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="423dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="558dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/광흥창"
+            android:tag="광흥창"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="423dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="530dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상수"
+            android:tag="상수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="413dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="517dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/합정"
+            android:tag="합정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="395dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="497dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/망원"
+            android:tag="망원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="365dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="465dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/마포구청"
+            android:tag="마포구청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/월드컵경기장"
+            android:tag="월드컵경기장"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="305dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/증산"
+            android:tag="증산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="240dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/새절"
+            android:tag="새절"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/응암"
+            android:tag="응암"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/역촌"
+            android:tag="역촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="474dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/구산"
+            android:tag="구산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="434dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/독바위"
+            android:tag="독바위"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="454dp"
+            android:onClick="click"/>
+
+        <!--공항-->
+        <ImageButton
+            android:id="@+id/인천국제공항"
+            android:tag="인천국제공항"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="460dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="37dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/공항화물청사"
+            android:tag="공항화물청사"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="430dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="37dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/운서"
+            android:tag="운서"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="400dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="37dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/청라국제도시"
+            android:tag="청라국제도시"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="370dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="37dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/검암"
+            android:tag="검암"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="340dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="37dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/계양"
+            android:tag="계양"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="320dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+        -->
+        <!--인천1호-->
+        <ImageButton
+            android:id="@+id/귤현"
+            android:tag="귤현"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="370dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/박촌"
+            android:tag="박촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="400dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/임학"
+            android:tag="임학"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="430dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/계산"
+            android:tag="계산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="460dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/경인교대입구"
+            android:tag="경인교대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="500dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/작전"
+            android:tag="작전"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="530dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/갈산"
+            android:tag="갈산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="560dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/부평구청"
+            android:tag="부평구청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="595dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/부평시장"
+            android:tag="부평시장"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="632dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="90dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/부평"
+            android:tag="부평"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="660dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="150dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/동수"
+            android:tag="동수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="660dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="190dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/부평삼거리"
+            android:tag="부평삼거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="670dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="210dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/간석오거리"
+            android:tag="간석오거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="690dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="225dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/인천시청"
+            android:tag="인천시청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="705dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="240dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/예술회관"
+            android:tag="예술회관"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="720dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="255dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/인천터미널"
+            android:tag="인천터미널"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="735dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="275dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/문학경기장"
+            android:tag="문학경기장"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="758dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="293dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/선학"
+            android:tag="선학"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="772dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="310dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신연수"
+            android:tag="신연수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="813dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="298dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/원인재"
+            android:tag="원인재"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="268dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/동춘"
+            android:tag="동춘"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="240dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/동막"
+            android:tag="동막"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="210dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/캠퍼스타운"
+            android:tag="캠퍼스타운"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="180dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/테크노파크"
+            android:tag="테크노파크"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="145dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/지식정보단지"
+            android:tag="지식정보단지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="110dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/인천대입구"
+            android:tag="인천대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="815dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="68dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/센트럴파크"
+            android:tag="센트럴파크"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="780dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="35dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/국제업무지구"
+            android:tag="국제업무지구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="759dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="35dp"
+            android:onClick="click"/>
+        <!--신분당선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="675dp"
+            android:layout_marginLeft="890dp"
+            android:id="@+id/강남"
+            android:tag="강남"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="760dp"
+            android:layout_marginLeft="940dp"
+            android:id="@+id/양재시민의숲"
+            android:tag="양재시민의숲"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="790dp"
+            android:layout_marginLeft="1012dp"
+            android:id="@+id/청계산입구"
+            android:tag="청계산입구"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="790dp"
+            android:layout_marginLeft="1069dp"
+            android:id="@+id/판교"
+            android:tag="판교"
+
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="815dp"
+            android:layout_marginLeft="1100dp"
+            android:id="@+id/정자"
+            android:tag="정자"
+            android:onClick="click"
+            />
+        <!--9호선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="275dp"
+            android:layout_marginLeft="97dp"
+            android:id="@+id/개화"
+            android:tag="개화"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="323dp"
+            android:layout_marginLeft="196dp"
+            android:id="@+id/공항시장"
+            android:tag="공항시장"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="323dp"
+            android:layout_marginLeft="226dp"
+            android:id="@+id/신방화"
+            android:tag="신방화"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="243dp"
+            android:id="@+id/마곡나루"
+            android:tag="마곡나루"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="345dp"
+            android:layout_marginLeft="257dp"
+            android:id="@+id/양천향교"
+            android:tag="양천향교"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="360dp"
+            android:layout_marginLeft="272dp"
+            android:id="@+id/가양"
+            android:tag="가양"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="311dp"
+            android:id="@+id/증미"
+            android:tag="증미"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="341dp"
+            android:id="@+id/등촌"
+            android:tag="등촌"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="371dp"
+            android:id="@+id/염창"
+            android:tag="염창"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="401dp"
+            android:id="@+id/신목동"
+            android:tag="신목동"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="385dp"
+            android:layout_marginLeft="425dp"
+            android:id="@+id/선유도"
+            android:tag="선유도"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="405dp"
+            android:layout_marginLeft="450dp"
+            android:id="@+id/당산"
+            android:tag="당산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="440dp"
+            android:layout_marginLeft="482dp"
+            android:id="@+id/국회의사당"
+            android:tag="국회의사당"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="497dp"
+            android:layout_marginLeft="539dp"
+            android:id="@+id/샛강"
+            android:tag="샛강"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="570dp"
+            android:id="@+id/노량진9호선"
+            android:tag="노량진9호선"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="560dp"
+            android:layout_marginLeft="600dp"
+            android:id="@+id/노들"
+            android:tag="노들"
+
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="567dp"
+            android:layout_marginLeft="638dp"
+            android:id="@+id/흑석"
+            android:tag="흑석"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="567dp"
+            android:layout_marginLeft="680dp"
+            android:id="@+id/동작"
+            android:tag="동작"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="567dp"
+            android:layout_marginLeft="738dp"
+            android:id="@+id/구반포"
+            android:tag="구반포"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="567dp"
+            android:layout_marginLeft="781dp"
+            android:id="@+id/신반포"
+            android:tag="신반포"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="625dp"
+            android:layout_marginLeft="925dp"
+            android:id="@+id/사평"
+            android:tag="사평"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="625dp"
+            android:layout_marginLeft="965dp"
+            android:id="@+id/신논현"
+            android:tag="신논현"
+            android:onClick="click"
+            />
+        <!--5호선-->
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="627dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/개롱"
+            android:tag = "개롱"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="652dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/거여"
+            android:tag = "거여"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="675dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/마천"
+            android:tag = "마천"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="580dp"
+            android:layout_marginLeft="1370dp"
+            android:id="@+id/방이"
+            android:tag = "방이"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="552dp"
+            android:layout_marginLeft="1370dp"
+            android:id="@+id/올림픽공원"
+            android:tag = "올림픽공원"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="529dp"
+            android:layout_marginLeft="1370dp"
+            android:id="@+id/둔촌동"
+            android:tag = "둔촌동"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="505dp"
+            android:layout_marginLeft="1370dp"
+            android:id="@+id/강동"
+            android:tag = "강동"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="505dp"
+            android:layout_marginLeft="1320dp"
+            android:id="@+id/천호"
+            android:tag = "천호"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="438dp"
+            android:layout_marginLeft="1241dp"
+            android:id="@+id/광나루"
+            android:tag = "광나루"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="1195dp"
+            android:id="@+id/아차산"
+            android:tag = "아차산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="353dp"
+            android:layout_marginLeft="1131dp"
+            android:id="@+id/군자"
+            android:tag = "군자"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="354dp"
+            android:layout_marginLeft="1097dp"
+            android:id="@+id/장한평"
+            android:tag = "장한평"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="354dp"
+            android:layout_marginLeft="1055dp"
+            android:id="@+id/답십리"
+            android:tag = "답십리"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="354dp"
+            android:layout_marginLeft="997dp"
+            android:id="@+id/마장"
+            android:tag = "마장"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="354dp"
+            android:layout_marginLeft="915dp"
+            android:id="@+id/행당"
+            android:tag = "행당"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="354dp"
+            android:layout_marginLeft="875dp"
+            android:id="@+id/신금호"
+            android:tag = "신금호"
+            android:onClick="click"
+            />
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="828dp"
+            android:id="@+id/동대문역사문화공원"
+            android:tag = "동대문역사문화공원"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="295dp"
+            android:layout_marginLeft="790dp"
+            android:id="@+id/을지로4가"
+            android:tag="을지로4가"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="295dp"
+            android:layout_marginLeft="580dp"
+            android:id="@+id/충정로"
+            android:tag="충정로"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="580dp"
+            android:id="@+id/서대문"
+            android:tag="서대문"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="620dp"
+            android:id="@+id/광화문"
+            android:tag="광화문문"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="318dp"
+            android:layout_marginLeft="580dp"
+            android:id="@+id/애오개"
+            android:tag="애오개"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="465dp"
+            android:layout_marginLeft="575dp"
+            android:id="@+id/마포"
+            android:tag="마포"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="465dp"
+            android:layout_marginLeft="545dp"
+            android:id="@+id/여의나루"
+            android:tag="여의나루"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="465dp"
+            android:layout_marginLeft="510dp"
+            android:id="@+id/여의도"
+            android:tag="여의도"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="467dp"
+            android:layout_marginLeft="457dp"
+            android:id="@+id/신길"
+            android:tag="신길"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="445dp"
+            android:layout_marginLeft="407dp"
+            android:id="@+id/영등포시장"
+            android:tag="영등포시장"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="425dp"
+            android:layout_marginLeft="387dp"
+            android:id="@+id/영등포구청"
+            android:tag="영등포구청"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="359dp"
+            android:id="@+id/양평"
+            android:tag="양평"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="337dp"
+            android:id="@+id/오목교"
+            android:tag="오목교"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="308dp"
+            android:id="@+id/목동"
+            android:tag="목동"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="285dp"
+            android:id="@+id/신정"
+            android:tag="신정"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="253dp"
+            android:id="@+id/까치산"
+            android:tag="까치산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="408dp"
+            android:layout_marginLeft="210dp"
+            android:id="@+id/화곡"
+            android:tag="화곡"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="390dp"
+            android:layout_marginLeft="195dp"
+            android:id="@+id/우장산"
+            android:tag="우장산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="378dp"
+            android:layout_marginLeft="183dp"
+            android:id="@+id/발산"
+            android:tag="발산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="363dp"
+            android:layout_marginLeft="166dp"
+            android:id="@+id/마곡"
+            android:tag="마곡"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="155dp"
+            android:id="@+id/송정"
+            android:tag="송정"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="152dp"
+            android:id="@+id/김포공항"
+            android:tag="김포공항"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="275dp"
+            android:layout_marginLeft="152dp"
+            android:id="@+id/개화산"
+            android:tag="개화산"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="150dp"
+            android:id="@+id/방화"
+            android:tag="방화"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="477dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/길동"
+            android:tag = "길동"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/명일"
+            android:tag = "명일"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="453dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/굽은다리"
+            android:tag = "굽은다리"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="408dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/고덕"
+            android:tag = "고덕"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="386dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/상일동"
+            android:tag = "상일동"
+            android:onClick="click"
+            />
+        <!--3호선-->
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="77dp"
+            android:id="@+id/대화"
+            android:tag="대화"
+            android:onClick="click"
+
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="114dp"
+            android:id="@+id/주엽"
+            android:tag = "주엽"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="146dp"
+            android:id="@+id/정발산"
+            android:tag = "정발산"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="181dp"
+            android:id="@+id/마두"
+            android:tag = "마두"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="215dp"
+            android:id="@+id/백석"
+            android:tag = "백석"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="284dp"
+            android:id="@+id/화정"
+            android:tag = "화정"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="311dp"
+            android:id="@+id/원당"
+            android:tag = "원당"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="338dp"
+            android:id="@+id/삼송"
+            android:tag = "삼송"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="367dp"
+            android:id="@+id/지축"
+            android:tag = "지축"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="394dp"
+            android:id="@+id/구파발"
+            android:tag = "구파발"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="421dp"
+            android:id="@+id/연신내"
+            android:tag = "연신내"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="484dp"
+            android:id="@+id/불광"
+            android:tag = "불광"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="520dp"
+            android:id="@+id/녹번"
+            android:tag = "녹번"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="553dp"
+            android:id="@+id/홍제"
+            android:tag = "홍제"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="580dp"
+            android:id="@+id/무악재"
+            android:tag = "무악재"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="138dp"
+            android:layout_marginLeft="615dp"
+            android:id="@+id/독립문"
+            android:tag = "독립문"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="158dp"
+            android:layout_marginLeft="637dp"
+            android:id="@+id/경복궁"
+            android:tag = "경복궁"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="183dp"
+            android:layout_marginLeft="660dp"
+            android:id="@+id/안국"
+            android:tag = "안국"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="690dp"
+            android:id="@+id/종로3가"
+            android:tag = "종로3가"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="295dp"
+            android:layout_marginLeft="704dp"
+            android:id="@+id/을지로3가"
+            android:tag = "을지로3가"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="353dp"
+            android:layout_marginLeft="748dp"
+            android:id="@+id/충무로"
+            android:tag = "충무로"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="393dp"
+            android:layout_marginLeft="788dp"
+            android:id="@+id/동대입구"
+            android:tag = "동대입구"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="428dp"
+            android:layout_marginLeft="825dp"
+            android:id="@+id/약수"
+            android:tag = "약수"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="455dp"
+            android:layout_marginLeft="835dp"
+            android:id="@+id/금호"
+            android:tag = "금호"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="834dp"
+            android:id="@+id/압구정"
+            android:tag = "압구정"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="550dp"
+            android:layout_marginLeft="834dp"
+            android:id="@+id/신사"
+            android:tag = "신사"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="570dp"
+            android:layout_marginLeft="834dp"
+            android:id="@+id/잠원"
+            android:tag = "잠원"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="610dp"
+            android:layout_marginLeft="834dp"
+            android:id="@+id/고속터미널"
+            android:tag = "고속터미널"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="834dp"
+            android:id="@+id/교대"
+            android:tag = "교대"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="700dp"
+            android:layout_marginLeft="836dp"
+            android:id="@+id/남부터미널"
+            android:tag = "남부터미널"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="710dp"
+            android:layout_marginLeft="890dp"
+            android:id="@+id/양재"
+            android:tag = "양재"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="712dp"
+            android:layout_marginLeft="934dp"
+            android:id="@+id/매봉"
+            android:tag = "매봉"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="712dp"
+            android:layout_marginLeft="980dp"
+            android:id="@+id/도곡"
+            android:tag = "도곡"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="712dp"
+            android:layout_marginLeft="1048dp"
+            android:id="@+id/대치"
+            android:tag = "대치"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="712dp"
+            android:layout_marginLeft="1115dp"
+            android:id="@+id/학여울"
+            android:tag = "학여울"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="712dp"
+            android:layout_marginLeft="1168dp"
+            android:id="@+id/대청"
+            android:tag = "대청"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="725dp"
+            android:layout_marginLeft="1210dp"
+            android:id="@+id/일원"
+            android:tag = "일원"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="751dp"
+            android:layout_marginLeft="1247dp"
+            android:id="@+id/수서"
+            android:tag = "수서"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="693dp"
+            android:layout_marginLeft="1300dp"
+            android:id="@+id/가락시장"
+            android:tag = "가락시장"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="658dp"
+            android:layout_marginLeft="1330dp"
+            android:id="@+id/경찰병원"
+            android:tag = "경찰병원"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="603dp"
+            android:layout_marginLeft="1372dp"
+            android:id="@+id/오금"
+            android:tag = "오금"
+            android:onClick="click"
+            />
+        <!--수인-->
+
+        <ImageButton
+            android:id="@+id/송도"
+            android:tag = "송도"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="755dp"
+            android:layout_marginLeft="242dp"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/연수"
+            android:tag = "연수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="775dp"
+            android:layout_marginLeft="262dp"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/남동인더스파크"
+            android:tag = "남동인더스파크"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="859dp"
+            android:layout_marginLeft="242dp"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/호구포"
+            android:tag = "호구포"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="859dp"
+            android:layout_marginLeft="185dp"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/인천논현"
+            android:tag = "인천논현"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="859dp"
+            android:layout_marginLeft="130dp"
+
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/소래포구"
+            android:tag = "소래포구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="859dp"
+            android:layout_marginLeft="85dp"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/월곶"
+            android:tag = "월곶"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="879dp"
+            android:layout_marginLeft="40dp"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/오이도"
+            android:tag = "오이도"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="899dp"
+            android:layout_marginLeft="40dp"
+            android:onClick="click"
+            />
+        <!--8호선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="815dp"
+            android:layout_marginLeft="1290dp"
+            android:id="@+id/모란"
+            android:tag="모란"
+            android:onClick="click"
+            />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="845dp"
+            android:layout_marginLeft="1313dp"
+            android:id="@+id/수진"
+            android:tag="수진"
+
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="860dp"
+            android:layout_marginLeft="1360dp"
+            android:id="@+id/신흥"
+            android:tag="신흥"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="842dp"
+            android:layout_marginLeft="1384dp"
+            android:id="@+id/단대오거리"
+            android:tag="단대오거리"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="812dp"
+            android:layout_marginLeft="1384dp"
+            android:id="@+id/남한산성입구"
+            android:tag="남한삼성입구"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="786dp"
+            android:layout_marginLeft="1384dp"
+            android:id="@+id/산성"
+            android:tag="산성"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="756dp"
+            android:layout_marginLeft="1360dp"
+            android:id="@+id/복정"
+            android:tag="복정"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="735dp"
+            android:layout_marginLeft="1337dp"
+            android:id="@+id/장지"
+            android:tag="장지"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="716dp"
+            android:layout_marginLeft="1315dp"
+            android:id="@+id/문정"
+            android:tag="문정"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="1270dp"
+            android:id="@+id/송파"
+            android:tag="송파"
+            android:onClick="click" />
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="640dp"
+            android:layout_marginLeft="1235dp"
+            android:id="@+id/석촌"
+            android:tag="석촌"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="613dp"
+            android:layout_marginLeft="1209dp"
+            android:id="@+id/잠실"
+            android:tag="잠실"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="587dp"
+            android:layout_marginLeft="1236dp"
+            android:id="@+id/몽촌토성"
+            android:tag="몽촌토성"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="547dp"
+            android:layout_marginLeft="1277dp"
+            android:id="@+id/강동구청"
+            android:tag="강동구청"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="458dp"
+            android:layout_marginLeft="1320dp"
+            android:id="@+id/암사"
+            android:tag="암사"
+            android:onClick="click"/>
+        <!--4호선-->
+        <ImageButton
+            android:id="@+id/정왕"
+            android:tag = "정왕"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="95dp"
+            android:onClick="click"        />
+        <ImageButton
+            android:id="@+id/신길온천"
+            android:tag = "신길온천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="130dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/안산"
+            android:tag = "안산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="160dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/초지"
+            android:tag = "초지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="190dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/고잔"
+            android:tag = "고잔"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="220dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/중앙"
+            android:tag = "중앙"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="250dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/한대앞"
+            android:tag = "한대앞"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="280dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/상록수"
+            android:tag = "상록수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="310dp"
+            android:onClick="click"                    />
+        <ImageButton
+            android:id="@+id/시청"
+            android:tag="시청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="298dp"
+            android:src="@drawable/translation"
+            android:layout_marginLeft="630dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/남영"
+            android:tag="남영"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="408dp"
+            android:src="@drawable/nomal_station"
+            android:layout_marginLeft="630dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/반월"
+            android:tag = "반월"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="340dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/대야미"
+            android:tag = "대야미"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="370dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/수리산"
+            android:tag = "수리산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="903dp"
+            android:layout_marginLeft="405dp"
+            android:onClick="click"                    />
+        <ImageButton
+            android:id="@+id/산본"
+            android:tag = "산본"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="870dp"
+            android:layout_marginLeft="445dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/금정"
+            android:tag = "금정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="845dp"
+            android:layout_marginLeft="465dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/범계"
+            android:tag = "범계"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="800dp"
+            android:layout_marginLeft="495dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/평촌"
+            android:tag = "평촌"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="785dp"
+            android:layout_marginLeft="510dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/인덕원"
+            android:tag = "인덕원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="765dp"
+            android:layout_marginLeft="538dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/정부과천청사"
+            android:tag = "정부과천청사"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="765dp"
+            android:layout_marginLeft="575dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/과천"
+            android:tag = "과천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="760dp"
+            android:layout_marginLeft="602dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/대공원"
+            android:tag = "대공원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="755dp"
+            android:layout_marginLeft="622dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/경마공원"
+            android:tag = "경마공원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="740dp"
+            android:layout_marginLeft="637dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/선바위"
+            android:tag = "선바위"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="720dp"
+            android:layout_marginLeft="657dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/남태령"
+            android:tag = "남태령"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="700dp"
+            android:layout_marginLeft="677dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/사당"
+            android:tag = "사당"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="676dp"
+            android:layout_marginLeft="683dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/총신대입구"
+            android:tag = "총신대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="683dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/숙대입구"
+            android:tag = "숙대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="386dp"
+            android:layout_marginLeft="663dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/회현"
+            android:tag = "회현"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="356dp"
+            android:layout_marginLeft="693dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/명동"
+            android:tag = "명동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="356dp"
+            android:layout_marginLeft="720dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/동대문"
+            android:tag = "동대문"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="840dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/혜화"
+            android:tag = "혜화"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="840dp"
+            android:onClick="click" />
+
+        <ImageButton
+            android:id="@+id/한성대입구"
+            android:tag = "한성대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="840dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/성신여대입구"
+            android:tag = "성신여대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="840dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/길음"
+            android:tag = "길음"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="855dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/미아사거리"
+            android:tag = "미아사거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="880dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/미아"
+            android:tag = "미아"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="930dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/수유"
+            android:tag = "수유"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="970dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/쌍문"
+            android:tag = "쌍문"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="1000dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/창동"
+            android:tag = "창동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="1048dp"
+            android:onClick="click"                    />
+
+        <ImageButton
+            android:id="@+id/노원"
+            android:tag = "노원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="1100dp"
+            android:onClick="click"                    />
+
+
+        <ImageButton
+            android:id="@+id/상계"
+            android:tag = "상계"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="1165dp"
+            android:onClick="click"                    />
+        <ImageButton
+            android:id="@+id/당고개"
+            android:tag = "당고개"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="1215dp"
+            android:onClick="click"/>
+
+        <!--에버라인-->
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="840dp"
+            android:layout_marginLeft="803dp"
+            android:id="@+id/강남대"
+            android:tag="강남대"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="825dp"
+            android:id="@+id/지석"
+            android:tag="지석"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="853dp"
+            android:id="@+id/어정"
+            android:tag="어정"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="882dp"
+            android:id="@+id/동백"
+            android:tag="동백"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="908dp"
+            android:id="@+id/초당"
+            android:tag="초당"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="934dp"
+            android:id="@+id/삼가"
+            android:tag="삼가"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="971dp"
+            android:id="@+id/시청용인대"
+            android:tag="시청용인대"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1016dp"
+            android:id="@+id/명지대"
+            android:tag="명지대"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1050dp"
+            android:id="@+id/김량장"
+            android:tag="김량장"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1102dp"
+            android:id="@+id/운동장송담대"
+            android:tag="운동장송담대"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1148dp"
+            android:id="@+id/고진"
+            android:tag="고진"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1174dp"
+            android:id="@+id/보평"
+            android:tag="보평"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1197dp"
+            android:id="@+id/둔전"
+            android:tag="둔전"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="867dp"
+            android:layout_marginLeft="1237dp"
+            android:id="@+id/전대에버랜드"
+            android:tag="전대에버랜드"
+            android:onClick="click"/>
+
+        <!--분당선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="692dp"
+            android:layout_marginLeft="975dp"
+            android:id="@+id/한티"
+            android:tag = "한티"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="672dp"
+            android:layout_marginLeft="975dp"
+            android:id="@+id/선릉"
+            android:tag = "선릉"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="815dp"
+            android:layout_marginLeft="1318dp"
+            android:id="@+id/태평"
+            android:tag="태평"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="785dp"
+            android:layout_marginLeft="1365dp"
+            android:id="@+id/가천대"
+            android:tag="가천대"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1247dp"
+            android:id="@+id/야탑"
+            android:tag="야탑"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1208dp"
+            android:id="@+id/이매"
+            android:tag="이매"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1171dp"
+            android:id="@+id/서현"
+            android:tag="서현"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1134dp"
+            android:id="@+id/수내"
+            android:tag="수내"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1053dp"
+            android:id="@+id/미금"
+            android:tag="미금"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="1013dp"
+            android:id="@+id/오리"
+            android:tag="오리"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="970dp"
+            android:id="@+id/죽전"
+            android:tag="죽전"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="928dp"
+            android:id="@+id/보정"
+            android:tag="보정"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="887dp"
+            android:id="@+id/구성"
+            android:tag="구성"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="843dp"
+            android:id="@+id/신갈"
+            android:tag="신갈"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="803dp"
+            android:id="@+id/기흥"
+            android:tag="기흥"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="772dp"
+            android:id="@+id/상갈"
+            android:tag="상갈"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="734dp"
+            android:id="@+id/청명"
+            android:tag="청명"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="697dp"
+            android:id="@+id/영통"
+            android:tag="영통"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="657dp"
+            android:id="@+id/망포"
+            android:tag="망포"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="830dp"
+            android:layout_marginLeft="638dp"
+            android:id="@+id/매탄권선"
+            android:tag="매탄권선"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="852dp"
+            android:layout_marginLeft="638dp"
+            android:id="@+id/수원시청"
+            android:tag="수원시청"
+            android:onClick="click"
+            />
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="878dp"
+            android:layout_marginLeft="638dp"
+            android:id="@+id/매교"
+            android:tag="매교"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="905dp"
+            android:layout_marginLeft="638dp"
+            android:id="@+id/수원"
+            android:tag="수원"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="757dp"
+            android:layout_marginLeft="1171dp"
+            android:id="@+id/대모산입구"
+            android:tag="대모산입구"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="757dp"
+            android:layout_marginLeft="1113dp"
+            android:id="@+id/개포동"
+            android:tag="개포동"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="757dp"
+            android:layout_marginLeft="1048dp"
+            android:id="@+id/구룡"
+            android:tag="구룡"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="600dp"
+            android:layout_marginLeft="1048dp"
+            android:id="@+id/선정릉"
+            android:tag="선정릉"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="1060dp"
+            android:id="@+id/강남구청"
+            android:tag="강남구청"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="495dp"
+            android:layout_marginLeft="1029dp"
+            android:id="@+id/압구정로데오"
+            android:tag="압구정로데오"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="440dp"
+            android:layout_marginLeft="972dp"
+            android:id="@+id/서울숲"
+            android:tag="서울숲"
+            android:onClick="click"/>
+        <!--7호선-->
+        <ImageButton
+            android:id="@+id/장암"
+            android:tag="장암"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="1125dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/도봉산"
+            android:tag="도봉산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="1045dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/수락산"
+            android:tag="수락산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="54dp"
+            android:layout_marginLeft="1067dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/마들"
+            android:tag="마들"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="76dp"
+            android:layout_marginLeft="1087dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/중계"
+            android:tag="중계"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="108dp"
+            android:layout_marginLeft="1117dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/하계"
+            android:tag="하계"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/공릉"
+            android:tag="공릉"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="135dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/먹골"
+            android:tag="먹골"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="175dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/중화"
+            android:tag="증화"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/면목"
+            android:tag="면목"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="245dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/사가정"
+            android:tag="사가정"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/용마산"
+            android:tag="용마산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="290dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/중곡"
+            android:tag="중곡"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/어린이대공원"
+            android:tag="어린이대공원"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="1127dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/건대입구"
+            android:tag="건대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="440dp"
+            android:layout_marginLeft="1134dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/뚝섬유원지"
+            android:tag="뚝섬유원지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="470dp"
+            android:layout_marginLeft="1120dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/청담"
+            android:tag="청담"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="1090dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/학동"
+            android:tag="학동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="560dp"
+            android:layout_marginLeft="1030dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/논현"
+            android:tag="논현"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="577dp"
+            android:layout_marginLeft="970dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/반포"
+            android:tag="반포"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="577dp"
+            android:layout_marginLeft="910dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/내방"
+            android:tag="내방"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="770dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/남성"
+            android:tag="남성"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="650dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/숭실대입구"
+            android:tag="숭실대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="620dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상도"
+            android:tag="상도"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="590dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/장승배기"
+            android:tag="장승배기"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="555dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/신대방삼거리"
+            android:tag="신대방삼거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="530dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/보라매"
+            android:tag="보라매"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="495dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/신풍"
+            android:tag="신풍"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="460dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/대림"
+            android:tag="대림"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="430dp"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:id="@+id/남구로"
+            android:tag="남구로"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="405dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/가산디지털단지"
+            android:tag="가산디지털단지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="380dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/철산"
+            android:tag="철산"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="340dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/광명사거리"
+            android:tag="광명사거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="607dp"
+            android:layout_marginLeft="300dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/천왕"
+            android:tag="천왕"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="590dp"
+            android:layout_marginLeft="285dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/온수"
+            android:tag="온수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="562dp"
+            android:layout_marginLeft="260dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/까치울"
+            android:tag="까치울"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="525dp"
+            android:layout_marginLeft="228dp"
+            android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/부천종합운동장"
+            android:tag="부천종합운동장"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="225dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/춘의"
+            android:tag="춘의"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="480dp"
+            android:layout_marginLeft="225dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/신중동"
+            android:tag="신중동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="460dp"
+            android:layout_marginLeft="205dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/부천시청"
+            android:tag="부천시청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="455dp"
+            android:layout_marginLeft="165dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/상동"
+            android:tag="상동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="475dp"
+            android:layout_marginLeft="145dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/삼선체육관"
+            android:tag="삼선체육관"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="505dp"
+            android:layout_marginLeft="145dp"
+            android:onClick="click"/>
+
+        <ImageButton
+            android:id="@+id/굴포천"
+            android:tag="굴포천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="145dp"
+            android:onClick="click"/>
+        <!--1호선-->
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="666dp"
+            android:id="@+id/세류"
+            android:tag="세류"
+            android:onClick="click"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="695dp"
+            android:id="@+id/병점"
+            android:tag="병점"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="725dp"
+            android:id="@+id/세마"
+            android:tag="세마"
+            android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="750dp"
+            android:id="@+id/오산대"
+            android:tag="오산대" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="783dp"
+            android:id="@+id/오산" android:onClick="click"
+            android:tag="오산"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="812dp"
+            android:id="@+id/진위" android:onClick="click"
+            android:tag="진위"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="842dp"
+            android:id="@+id/송탄" android:onClick="click"
+            android:tag="송탄"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="873dp"
+            android:id="@+id/서정리" android:onClick="click"
+            android:tag="서정리"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="903dp"
+            android:id="@+id/지제" android:onClick="click"
+            android:tag="지제"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="930dp"
+            android:id="@+id/평택" android:onClick="click"
+            android:tag="평택"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="960dp"
+            android:id="@+id/성환" android:onClick="click"
+            android:tag="성환"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="990dp"
+            android:id="@+id/직산" android:onClick="click"
+            android:tag="직산"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1020dp"
+            android:id="@+id/두정" android:onClick="click"
+            android:tag="두정"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1050dp"
+            android:id="@+id/천안" android:onClick="click"
+            android:tag="천안"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1078dp"
+            android:id="@+id/봉명" android:onClick="click"
+            android:tag="봉명"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1108dp"
+            android:id="@+id/쌍용" android:onClick="click"
+            android:tag="쌍용"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1136dp"
+            android:id="@+id/아산" android:onClick="click"
+            android:tag="아산"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1166dp"
+            android:id="@+id/배방" android:onClick="click"
+            android:tag="배방"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1196dp"
+            android:id="@+id/온양온천" android:onClick="click"
+            android:tag="온양온천"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="1226dp"
+            android:id="@+id/신창" android:onClick="click"
+            android:tag="신창"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="606dp"
+            android:id="@+id/화서" android:onClick="click"
+            android:tag="화서"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="576dp"
+            android:id="@+id/성균관대" android:onClick="click"
+            android:tag="성균관대"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="907dp"
+            android:layout_marginLeft="537dp"
+            android:id="@+id/의왕" android:onClick="click"
+            android:tag="의왕"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="882dp"
+            android:layout_marginLeft="493dp"
+            android:id="@+id/당정" android:onClick="click"
+            android:tag="당정"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="862dp"
+            android:layout_marginLeft="476dp"
+            android:id="@+id/군포" android:onClick="click"
+            android:tag="군포"/>
+
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="817dp"
+            android:layout_marginLeft="433dp"
+            android:id="@+id/명학" android:onClick="click"
+            android:tag="명학"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="792dp"
+            android:layout_marginLeft="410dp"
+            android:id="@+id/안양" android:onClick="click"
+            android:tag="안양"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="772dp"
+            android:layout_marginLeft="395dp"
+            android:id="@+id/관악" android:onClick="click"
+            android:tag="관악"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="732dp"
+            android:layout_marginLeft="378dp"
+            android:id="@+id/석수" android:onClick="click"
+            android:tag="석수"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="690dp"
+            android:layout_marginLeft="378dp"
+            android:id="@+id/금천구청" android:onClick="click"
+            android:tag="금천구청"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="679dp"
+            android:layout_marginLeft="339dp"
+            android:id="@+id/광명" android:onClick="click"
+            android:tag="광명"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="650dp"
+            android:layout_marginLeft="378dp"
+            android:id="@+id/독산" android:onClick="click"
+            android:tag="독산"/>
+
+
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="545dp"
+            android:layout_marginLeft="378dp"
+            android:id="@+id/구로" android:onClick="click"
+            android:tag="구로"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="344dp"
+            android:id="@+id/구일" android:onClick="click"
+            android:tag="구일"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="316dp"
+            android:id="@+id/개봉" android:onClick="click"
+            android:tag="개봉"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="286dp"
+            android:id="@+id/오류동" android:onClick="click"
+            android:tag="오류동"/>
+
+
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="230dp"
+            android:id="@+id/역곡" android:onClick="click"
+            android:tag="역곡"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="207dp"
+            android:id="@+id/소사" android:onClick="click"
+            android:tag="소사"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="182dp"
+            android:id="@+id/부천" android:onClick="click"
+            android:tag="부천"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="564dp"
+            android:layout_marginLeft="152dp"
+            android:id="@+id/중동" android:onClick="click"
+            android:tag="중동"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="607dp"
+            android:layout_marginLeft="146dp"
+            android:id="@+id/송내" android:onClick="click"
+            android:tag="송내"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="635dp"
+            android:layout_marginLeft="146dp"
+            android:id="@+id/부개" android:onClick="click"
+            android:tag="부개"/>
+
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="693dp"
+            android:layout_marginLeft="146dp"
+            android:id="@+id/백운" android:onClick="click"
+            android:tag="백운"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="723dp"
+            android:layout_marginLeft="126dp"
+            android:id="@+id/동암" android:onClick="click"
+            android:tag="동암"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="723dp"
+            android:layout_marginLeft="97dp"
+            android:id="@+id/간석" android:onClick="click"
+            android:tag="간석"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="723dp"
+            android:layout_marginLeft="65dp"
+            android:id="@+id/주안" android:onClick="click"
+            android:tag="주안"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="682dp"
+            android:layout_marginLeft="41dp"
+            android:id="@+id/도화" android:onClick="click"
+            android:tag="도화"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="652dp"
+            android:layout_marginLeft="41dp"
+            android:id="@+id/제물포" android:onClick="click"
+            android:tag="제물포"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="628dp"
+            android:layout_marginLeft="41dp"
+            android:id="@+id/도원" android:onClick="click"
+            android:tag="도원"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="600dp"
+            android:layout_marginLeft="41dp"
+            android:id="@+id/동인천" android:onClick="click"
+            android:tag="동인천"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="575dp"
+            android:layout_marginLeft="41dp"
+            android:id="@+id/인천" android:onClick="click"
+            android:tag="인천"/>
+
+
+        <!--2호선-->
+        <ImageButton
+            android:id="@+id/신정네거리"
+            android:tag="신정네거리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="455dp"
+            android:layout_marginLeft="275dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/양천구청"
+            android:tag="양천구청"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="475dp"
+            android:layout_marginLeft="300dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/도림천"
+            android:tag="도림천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="325dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/신도림"
+            android:tag="신도림"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="510dp"
+            android:layout_marginLeft="415dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/구로디지털단지"
+            android:tag="구로디지털단지"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="655dp"
+            android:layout_marginLeft="430dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/신대방"
+            android:tag="신대방"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="480dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/신림"
+            android:tag="신림"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="525dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/봉천"
+            android:tag="봉천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="570dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/서울대입구"
+            android:tag="서울대입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="610dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/낙성대"
+            android:tag="낙성대"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="652dp" android:onClick="click"
+            />
+
+
+        <ImageButton
+            android:id="@+id/방배"
+            android:tag="방배"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="730dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/서초"
+            android:tag="서초"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="770dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/역삼"
+            android:tag="역삼"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="935dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/삼성"
+            android:tag="삼성"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="1050dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/종합운동장"
+            android:tag="종합운동장"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="1110dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/신천"
+            android:tag="신천"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="673dp"
+            android:layout_marginLeft="1170dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/잠실나루"
+            android:tag="잠실나루"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="545dp"
+            android:layout_marginLeft="1205dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/강변"
+            android:tag="강변"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="1200dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/구의"
+            android:tag="구의"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="465dp"
+            android:layout_marginLeft="1170dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/성수"
+            android:tag="성수"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="415dp"
+            android:layout_marginLeft="1025dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/용답"
+            android:tag="용답"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="1020dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/신답"
+            android:tag="신답"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="950dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/용두"
+            android:tag="용두"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="930dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/신설동"
+            android:tag="신설동"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/translation"
+            android:layout_marginTop="205dp"
+            android:layout_marginLeft="910dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/뚝섬"
+            android:tag="뚝섬"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="1008dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/한양대"
+            android:tag="한양대"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="380dp"
+            android:layout_marginLeft="990dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/상왕십리"
+            android:tag="상왕십리"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="310dp"
+            android:layout_marginLeft="920dp" android:onClick="click"
+            />
+        <ImageButton
+            android:id="@+id/을지로입구"
+            android:tag="을지로입구"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="295dp"
+            android:layout_marginLeft="670dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/아현"
+            android:tag="아현"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="535dp" android:onClick="click"/>
+        <ImageButton
+            android:id="@+id/이대"
+            android:tag="이대"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="535dp" android:onClick="click"
+            />
+
+        <ImageButton
+            android:id="@+id/신촌2호선"
+            android:tag="신촌2호선"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="527dp" android:onClick="click"
+
+            />
+        <ImageButton
+            android:id="@+id/문래"
+            android:tag="문래"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="460dp"
+            android:layout_marginLeft="385dp" android:onClick="click"
+
+            />
+
+        <!--강북1호선-->
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="440dp"
+            android:id="@+id/영등포"
+            android:tag="영등포" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="483dp"
+            android:id="@+id/대방"
+            android:tag="대방" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="516dp"
+            android:id="@+id/노량진"
+            android:tag="노량진" android:onClick="click"/>
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="650dp"
+            android:id="@+id/종각"
+            android:tag="종각" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="770dp"
+            android:id="@+id/종로5가"
+            android:tag="종로5가" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="935dp"
+            android:id="@+id/제기동"
+            android:tag="제기동" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="1008dp"
+            android:id="@+id/외대앞"
+            android:tag="외대앞" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="1020dp"
+            android:id="@+id/신이문"
+            android:tag="신이문" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="1043dp"
+            android:id="@+id/광운대"
+            android:tag="광운대" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="1043dp"
+            android:id="@+id/월계"
+            android:tag="월계" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="105dp"
+            android:layout_marginLeft="1043dp"
+            android:id="@+id/녹천"
+            android:tag="녹천" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="1045dp"
+            android:id="@+id/방학"
+            android:tag="방학" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="1045dp"
+            android:id="@+id/도봉"
+            android:tag="도봉" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="1010dp"
+            android:id="@+id/망월사"
+            android:tag="망월사" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="980dp"
+            android:id="@+id/회룡"
+            android:tag="회룡" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="947dp"
+            android:id="@+id/의정부"
+            android:tag="의정부" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="917dp"
+            android:id="@+id/가능"
+            android:tag="가능" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="885dp"
+            android:id="@+id/녹양"
+            android:tag="녹양" android:onClick="click"/>
+
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="853dp"
+            android:id="@+id/양주"
+            android:tag="양주" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="823dp"
+            android:id="@+id/덕계"
+            android:tag="덕계" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="791dp"
+            android:id="@+id/덕정"
+            android:tag="덕정" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="761dp"
+            android:id="@+id/지행"
+            android:tag="지행" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="730dp"
+            android:id="@+id/동두천중앙"
+            android:tag="동두천중앙" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="700dp"
+            android:id="@+id/보산"
+            android:tag="보산" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="665dp"
+            android:id="@+id/동두천"
+            android:tag="동두천" android:onClick="click"/>
+
+        <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src ="@drawable/nomal_station"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="635dp"
+            android:id="@+id/소요산"
+            android:tag="소요산" android:onClick="click"/>
+      </RelativeLayout>
+    </HorizontalScrollView>
+  </ScrollView>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="선택"
+    android:id="@+id/btn"
+    android:layout_marginLeft="308dp"
+    android:layout_marginStart="308dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+</RelativeLayout>

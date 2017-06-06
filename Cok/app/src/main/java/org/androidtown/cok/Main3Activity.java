@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -30,7 +31,7 @@ import java.util.Map;
 
 public class Main3Activity extends AppCompatActivity  {
     TextView text1,text2,txt;
-    Button btn,btn2,btn3,abtn;
+    Button btn,btn2,btn3,abtn,btn4;
     String title,mas,title1;
     String phoneNum,number;
     Server server = new Server();
@@ -95,6 +96,14 @@ public class Main3Activity extends AppCompatActivity  {
                 finish();
             }
         });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main3Activity.this,subwayActivity.class);
+                startActivity(intent);
+                startActivityForResult(intent,1);
+            }
+        });
         abtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +124,7 @@ public class Main3Activity extends AppCompatActivity  {
         btn2 = (Button)findViewById(R.id.btn2);
         btn3 = (Button)findViewById(R.id.btn3);
         abtn=(Button)findViewById(R.id.abtn);
+        btn4= (Button)findViewById(R.id.btn4);
     }
     private void setalarm(JSONArray jsonArray) throws JSONException{
         JSONObject order = jsonArray.getJSONObject(0);
@@ -132,6 +142,36 @@ public class Main3Activity extends AppCompatActivity  {
             str+="\n";
         }
         txt.setText(str);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String k=MainActivity.location.get("가락시장");
+        double a,b;
+        a= Double.parseDouble(k.substring(0,7));
+        b= Double.parseDouble(k.substring(9));
+
+        k=MainActivity.location.get("석촌");
+        double c,d;
+        c= Double.parseDouble(k.substring(0,7));
+        d= Double.parseDouble(k.substring(9));
+
+        a= (a+c)/2;
+        b = (b+d)/2;
+        double min = 9999;
+        String temp = null;
+        Iterator<String> iterator = MainActivity.location.keySet().iterator();
+        while (iterator.hasNext()) {
+            String s =(String) iterator.next();
+            String key = MainActivity.location.get(s);
+            double ln= Double.parseDouble(key.substring(0,7));
+            double lb= Double.parseDouble(key.substring(9));
+            if(min>Math.abs((a-ln))+Math.abs((b-lb))){
+                temp= s;
+                min = Math.abs((a-ln))+Math.abs((b-lb));
+            }
+        }
+        System.out.println(temp+MainActivity.location.get(temp));
     }
     public void shareKakao(View v) {
         try {

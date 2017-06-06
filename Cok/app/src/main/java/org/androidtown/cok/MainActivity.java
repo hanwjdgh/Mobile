@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static Map<String, Integer> Ala = new HashMap<String, Integer>();
     String setCurDate;
     int cnt=0, ftem;
-
+    public static HashMap<String, String> location = new HashMap<String,String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
