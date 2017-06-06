@@ -105,9 +105,31 @@ public class Server {
             }
         }.start();
     }
+    public void addPoint(final String phonenum, final String point, final String title){
+        new Thread(){
+            @Override
+            public void run() {
+                HttpURLConnection con = getConnection("POST", "/loca");
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("phonenum", phonenum);
+                    jsonObject.put("point", point);
+                    jsonObject.put("title", title);
+                } catch (Exception e) {
+                }
+                sendJson(con, jsonObject);
+                try {
+                    System.out.println("code2" + con.getResponseCode());
+                    System.out.println("Result is: " + jsonObject);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
     public HttpURLConnection getConnection(String method, String path) {
         try {
-            URL url = new URL("http://192.168.0.110:3000" + path);
+            URL url = new URL("http://218.51.198.118:3000" + path);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(method);
             con.setRequestProperty("Content-Type", "application/json");

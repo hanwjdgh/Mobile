@@ -5,7 +5,9 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.PowerManager;
+import android.support.annotation.RequiresApi;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -19,11 +21,14 @@ public class AlarmReceive extends BroadcastReceiver {
     SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     // nowDate 변수에 값을 저장한다.
     String formatDate = sdfNow.format(date);
-
-    public AlarmReceive() { }
+    String title;
+    public AlarmReceive(String name) {
+        title =name;
+    }
 
     private NotificationManager mManager;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
         if (sCpuWakeLock != null) {
@@ -47,7 +52,7 @@ public class AlarmReceive extends BroadcastReceiver {
         Notification.Builder mBuilder = new Notification.Builder(context);
         mBuilder.setSmallIcon(R.mipmap.ic_launcher);
         mBuilder.setTicker("hi");
-        mBuilder.setContentTitle("hi1");
+        mBuilder.setContentTitle(title);
         mBuilder.setContentText(formatDate );
 
         mBuilder.setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE);

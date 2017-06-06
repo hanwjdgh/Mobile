@@ -6,20 +6,23 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 /**
  * Created by LEE on 2017-06-03.
  */
 
-public class subwayActivity extends Activity {
+public class subwayActivity extends AppCompatActivity {
     ImageButton k = null;
     Bitmap tmpBitmap3, tmpBitmap2;
     Drawable temp3;
     int count = 0, count2 = 0;
     Button btn;
+    String station = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,9 @@ public class subwayActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
+                Bundle bundle = intent.getExtras();
+                bundle.putString("point", station);
+                intent.putExtras(bundle);
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -37,7 +43,7 @@ public class subwayActivity extends Activity {
     }
 
     public void click(View view) {
-        //Toast.makeText(getApplicationContext(),view.getTag()+"",Toast.LENGTH_SHORT).show();
+        station = view.getTag() + "";
         ImageButton imageButton = (ImageButton) view;
         Drawable temp = getApplicationContext().getResources().getDrawable(R.drawable.translation);
         Drawable temp1 = getApplicationContext().getResources().getDrawable(R.drawable.nomal_station);
@@ -71,7 +77,6 @@ public class subwayActivity extends Activity {
         k = imageButton;
         count++;
     }
-
 }
 
 

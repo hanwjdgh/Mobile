@@ -13,6 +13,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,10 +31,12 @@ public class VoteActivtiy extends AppCompatActivity {
     Bundle bundle2;
     String s, title;
     Button btn,btn1;
-    String phoneNum,meeting,start,finish;
+    String phoneNum,start,finish;
     public static int setting=0;
+    int meeting;
     Intent intent;
     int vote,people;
+    String setCurDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,7 @@ public class VoteActivtiy extends AppCompatActivity {
         btn = (Button)findViewById(R.id.button);
         btn1 = (Button)findViewById(R.id.button1);
         phoneNum = getPhoneNum();
-
+        setDate();
         if(setting==0) {
             intent = getIntent();
             Uri uri = intent.getData();
@@ -80,9 +84,9 @@ public class VoteActivtiy extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                server.Insertproject(msg1,phoneNum,project,meeting,start,finish,1,people);
-                //mainActivity.makefragment(msg1,arr1[1],meeting,mainActivity.calculate(start,finish)+"");
+                server.Insertproject(msg1,phoneNum,project,meeting+"",start,finish,1,people);
                 server.maketable(title,data);
+                //mainActivity.makefragment(msg1,project,people+"",meeting+"",mainActivity.calculate(start,finish)+"",mainActivity.calculate(start,setCurDate), finish);
                 Intent inte = new Intent(VoteActivtiy.this, MainActivity.class);
                 startActivity(inte);
                 finish();
@@ -95,7 +99,12 @@ public class VoteActivtiy extends AppCompatActivity {
             }
         });
     }
-
+    private void setDate() {
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat SettingFormat = new SimpleDateFormat("yyyy-MM-dd");
+        setCurDate = SettingFormat.format(date);
+    }
     @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
@@ -110,7 +119,7 @@ public class VoteActivtiy extends AppCompatActivity {
     private void arrayToobject(JSONArray jsonArray) throws JSONException {
         String str;
         JSONObject order = jsonArray.getJSONObject(0);
-        meeting = order.getString("meeting");
+        meeting = order.getInt("meeting");
         start = order.getString("start");
         finish = order.getString("finish");
         vote = order.getInt("vote");
