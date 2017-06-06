@@ -244,6 +244,7 @@ public class Main3Activity extends AppCompatActivity {
                     while (iterator.hasNext()) {
                         String s = (String) iterator.next();
                         String key = MainActivity.location.get(s);
+
                         double ln = Double.parseDouble(key.substring(0, 7));
                         double lb = Double.parseDouble(key.substring(9));
                         if (min > Math.abs((a - ln)) + Math.abs((b - lb))) {

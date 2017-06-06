@@ -12,7 +12,7 @@ import android.support.annotation.RequiresApi;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-public class AlarmReceive extends BroadcastReceiver {
+public class BootReceiver extends BroadcastReceiver {
     private static PowerManager.WakeLock sCpuWakeLock;
     long now = System.currentTimeMillis();
     // 현재시간을 date 변수에 저장한다.
@@ -22,10 +22,6 @@ public class AlarmReceive extends BroadcastReceiver {
     // nowDate 변수에 값을 저장한다.
     String formatDate = sdfNow.format(date);
     String title;
-    public AlarmReceive() {}
-
-    private NotificationManager mManager;
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {

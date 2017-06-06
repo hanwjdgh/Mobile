@@ -16,13 +16,14 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAR03YIFEVkC-xrh9BXzkguU3wfhpxzyjg"/>
+            android:value="AIzaSyAR03YIFEVkC-xrh9BXzkguU3wfhpxzyjg" />
+
         <activity
             android:name=".SplachActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity android:name=".MapActivity"/>
+        <activity android:name=".MapActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +33,11 @@
         </activity>
         <activity android:name=".Main2Activity" />
         <activity android:name=".Main3Activity" />
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".subwayActivity"/>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".subwayActivity" />
         <activity
             android:name=".AlarmActivty"
             android:theme="@android:style/Theme.Dialog" />
-
         <activity android:name=".VoteActivtiy">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -58,7 +58,15 @@
         <receiver
             android:name=".AlarmReceive"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
