@@ -32,7 +32,7 @@ public class Main2Activity extends AppCompatActivity {
         sd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent clintent = new Intent(Main2Activity.this, Calendar.class);
+                Intent clintent = new Intent(Main2Activity.this, CalendarActivity.class);
                 clintent.setFlags(1);
                 Bundle bundle = new Bundle();
                 clintent.putExtras(bundle);
@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
         fd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent clintent = new Intent(Main2Activity.this, Calendar.class);
+                Intent clintent = new Intent(Main2Activity.this, CalendarActivity.class);
                 clintent.setFlags(2);
                 Bundle bundle = new Bundle();
                 clintent.putExtras(bundle);

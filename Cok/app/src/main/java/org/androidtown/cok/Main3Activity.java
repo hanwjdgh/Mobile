@@ -118,10 +118,6 @@ public class Main3Activity extends AppCompatActivity  {
     }
     private void setalarm(JSONArray jsonArray) throws JSONException{
         JSONObject order = jsonArray.getJSONObject(0);
-        System.out.println("@@@"+order.getInt("alarm1"));
-        System.out.println(order.getInt("alarm3"));
-        System.out.println(order.getInt("alarm5"));
-        System.out.println(order.getInt("alarm7"));
         Alarm.put("1",order.getInt("alarm1"));
         Alarm.put("3",order.getInt("alarm3"));
         Alarm.put("5",order.getInt("alarm5"));

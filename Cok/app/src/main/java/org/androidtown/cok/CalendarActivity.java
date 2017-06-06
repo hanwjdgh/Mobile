@@ -10,11 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by GE62 on 2017-05-10.
+ * Created by GE62 on 2017-06-06.
  */
 
-public class Calendar extends AppCompatActivity {
-
+public class CalendarActivity extends AppCompatActivity{
     Button button,s_btn,e_btn;
     FragmentManager fm;
     Thread th,th2;
@@ -29,8 +28,8 @@ public class Calendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         intent = getIntent();
-        cf = new CalendarFragment(Calendar.this, intent);
-        cf2 = new CalendarFragment2(Calendar.this, intent);
+        cf = new CalendarFragment(CalendarActivity.this, intent);
+        cf2 = new CalendarFragment2(CalendarActivity.this, intent);
         s_btn = (Button) findViewById(R.id.btn);
         e_btn = (Button) findViewById(R.id.btn2);
         th = new cThread(1);
