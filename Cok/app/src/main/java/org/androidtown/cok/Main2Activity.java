@@ -22,6 +22,7 @@ public class Main2Activity extends AppCompatActivity {
     TextView text, t,ptxt;
     EditText title;
     int count = 0,pcnt=0;
+    public  static  Intent clintent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class Main2Activity extends AppCompatActivity {
         sd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent clintent = new Intent(Main2Activity.this, CalendarActivity.class);
+                clintent = new Intent(Main2Activity.this, CalendarActivity.class);
                 clintent.setFlags(1);
                 Bundle bundle = new Bundle();
                 clintent.putExtras(bundle);
@@ -42,7 +43,7 @@ public class Main2Activity extends AppCompatActivity {
         fd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent clintent = new Intent(Main2Activity.this, CalendarActivity.class);
+                clintent = new Intent(Main2Activity.this, CalendarActivity.class);
                 clintent.setFlags(2);
                 Bundle bundle = new Bundle();
                 clintent.putExtras(bundle);

@@ -18,6 +18,6 @@ public class SplachActivity extends Activity{
                 finish();
             }
         };
-        handler.sendEmptyMessageDelayed(0,100);
+        handler.sendEmptyMessageDelayed(0,150);
     }
 }

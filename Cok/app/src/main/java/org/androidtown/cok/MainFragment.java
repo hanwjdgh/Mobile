@@ -36,7 +36,6 @@ public class MainFragment extends Fragment {
     Button btn;
     TextView day;
     boolean isRunning = false;
-    Context mainContext;
     Bundle extra;
     String mas, fdate;
     Map<String, Integer> Alam;
@@ -69,7 +68,7 @@ public class MainFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mainContext, Main3Activity.class);
+                Intent intent = new Intent(getActivity(), Main3Activity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("master", mas);
                 bundle.putString("NAME", pName.getText().toString());
@@ -84,9 +83,8 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-    public MainFragment(Context _context, Map map) {
-        mainContext = _context;
-        Alam = map;
+    public MainFragment() {
+
     }
 
     public void onStart() {
@@ -96,7 +94,7 @@ public class MainFragment extends Fragment {
             public void run() {
                 try {
                     int i;
-                    for (i = 0; i < Integer.parseInt(extra.getString("day")) && isRunning; i--) {
+                    for (i = cur; i < cur && isRunning; i--) {
                         Thread.sleep(6000);
                         Message msg = handler.obtainMessage();
                         handler.sendMessage(msg);
@@ -110,11 +108,9 @@ public class MainFragment extends Fragment {
         thread1.start();
     }
 
-
     public class ProgressHandler extends Handler {
         public void handleMessage(Message msg) {
             bar.incrementProgressBy(1);
         }
-
     }
 }

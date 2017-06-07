@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
 
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        MainFragment cf = new MainFragment(MainActivity.this, Ala);
+        MainFragment cf = new MainFragment();
         Bundle bundle = new Bundle();
         bundle.putString("master", master);
         bundle.putString("Project", outName);
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
             if (Ala.get(key) == 1) {
                 receiverIntent.putExtra("day", key);
                 pendingIntent = PendingIntent.getBroadcast(MainActivity.this, cnt, receiverIntent, 0);
-                calendar.set(year, mon - 1, date - dis, 23, 42, 0);
+                calendar.set(year, mon - 1, date - dis, 12, 0, 0);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                 dis += 2;
                 cnt++;

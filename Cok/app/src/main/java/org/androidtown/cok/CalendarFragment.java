@@ -21,8 +21,8 @@ import java.util.Locale;
 
 public class CalendarFragment extends Fragment {
     CalendarView calendarView;
-    Context mainContext;
-    Intent m_intent;
+
+    Bundle bundle;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -41,26 +41,23 @@ public class CalendarFragment extends Fragment {
         final SimpleDateFormat curDayFormat = new SimpleDateFormat("dd", Locale.KOREA);
 
 
-        Bundle bundle = m_intent.getExtras();
+        bundle =Main2Activity.clintent.getExtras();
         bundle.putInt("YEAR", Integer.parseInt(String.valueOf(curYearFormat.format(date))));
         bundle.putInt("MONTH", Integer.parseInt(String.valueOf(curMonthFormat.format(date))));
         bundle.putInt("DAY",Integer.parseInt(String.valueOf(curDayFormat.format(date))));
-        m_intent.putExtras(bundle);
+        Main2Activity.clintent.putExtras(bundle);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Bundle bundle = m_intent.getExtras();
                 bundle.putInt("YEAR",year);
                 bundle.putInt("MONTH",month+1);
                 bundle.putInt("DAY",dayOfMonth);
-                m_intent.putExtras(bundle);
+                Main2Activity.clintent.putExtras(bundle);
             }
         });
         return rootView;
 
     }
-    public CalendarFragment(Context _context, Intent intent){
-        mainContext = _context;
-        m_intent=intent;
+    public CalendarFragment(){
     }
 }

@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 public class dateFragment extends Fragment {
     TextView text,text2;
-    Context mainContext;
     RelativeLayout layout;
     int ct = 0;
     Bundle bundle;
@@ -57,7 +56,7 @@ public class dateFragment extends Fragment {
         return rootView;
     }
 
-    public dateFragment(Context _context) {
-        mainContext = _context;
+    public dateFragment() {
+
     }
 }

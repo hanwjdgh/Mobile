@@ -39,7 +39,7 @@
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
         android:layout_marginTop="40dp"
-        android:text="   Meeting   : "
+        android:text="  Meeting    : "
         android:textSize="24sp" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/buttonm"
         android:layout_marginTop="31dp"
-        android:text="    People    :  "
+        android:text="   People     :  "
         android:textSize="24sp" />
 
     <TextView

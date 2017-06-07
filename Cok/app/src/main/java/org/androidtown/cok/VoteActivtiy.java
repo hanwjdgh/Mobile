@@ -169,7 +169,7 @@ public class VoteActivtiy extends AppCompatActivity {
     public void makefragment(String start) {
         android.app.FragmentManager fm = getFragmentManager();
         android.app.FragmentTransaction tr = fm.beginTransaction();
-        dateFragment cf = new dateFragment(VoteActivtiy.this);
+        dateFragment cf = new dateFragment();
         bundle2 = new Bundle();
         bundle2.putInt("count",data.get(start));
         bundle2.putString("start", start);
