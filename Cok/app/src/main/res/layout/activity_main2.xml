@@ -12,12 +12,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:text="프로잭트 명 : "
-        android:textSize="24sp"
+        android:layout_alignEnd="@+id/tt"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/tt"
-        android:layout_alignEnd="@+id/tt" />
+        android:layout_marginTop="69dp"
+        android:text="   Project     : "
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -39,19 +39,19 @@
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
         android:layout_marginTop="40dp"
-        android:text="모임 수    :  "
+        android:text="   Meeting   : "
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="인원 수    :  "
-        android:textSize="24sp"
-        android:layout_below="@+id/buttonm"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/buttonm"
+        android:layout_marginTop="31dp"
+        android:text="    People    :  "
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/count"
@@ -132,7 +132,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:text="생성" />
+        android:text="Done" />
 
     <Button
         android:id="@+id/fd_button"

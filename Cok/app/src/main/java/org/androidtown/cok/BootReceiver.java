@@ -25,6 +25,8 @@ public class BootReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
+        String str = intent.getExtras().getString("name");
+        String day = intent.getExtras().getString("day");
         if (sCpuWakeLock != null) {
             return;
         }
@@ -47,7 +49,7 @@ public class BootReceiver extends BroadcastReceiver {
         mBuilder.setSmallIcon(R.mipmap.ic_launcher);
         mBuilder.setTicker("hi");
         mBuilder.setContentTitle(title);
-        mBuilder.setContentText(formatDate );
+        mBuilder.setContentText(str+" "+day+"-day");
 
         mBuilder.setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE);
         //mBuilder.setContentIntent(pendingIntent);

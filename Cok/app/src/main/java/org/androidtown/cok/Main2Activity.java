@@ -71,8 +71,8 @@ public class Main2Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             Bundle bundle = data.getExtras();
-            sd_button.setText("시작일 :" + bundle.getInt("YEAR") + " 년 " + bundle.getInt("MONTH") + " 월 " + bundle.getInt("DAY") + " 일");
-            fd_button.setText("종료일 :" + bundle.getInt("Year") + " 년 " + bundle.getInt("Month") + " 월 " + bundle.getInt("Day") + " 일");
+            sd_button.setText("Start  :" + bundle.getInt("YEAR") + " 년 " + bundle.getInt("MONTH") + " 월 " + bundle.getInt("DAY") + " 일");
+            fd_button.setText("Finish :" + bundle.getInt("Year") + " 년 " + bundle.getInt("Month") + " 월 " + bundle.getInt("Day") + " 일");
             if (bundle.getInt("MONTH") < 10) {
                 if (bundle.getInt("DAY") < 10)
                     s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + "0" + bundle.getInt("DAY");
@@ -106,8 +106,8 @@ public class Main2Activity extends AppCompatActivity {
         SimpleDateFormat SettingFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strCurDate = CurDateFormat.format(date);
         String setCurDate = SettingFormat.format(date);
-        sd_button.setText("시작" + "     " + strCurDate);
-        fd_button.setText("종료" + "     " + strCurDate);
+        sd_button.setText("Start  " + "     " + strCurDate);
+        fd_button.setText("Finish " + "     " + strCurDate);
         s = f = setCurDate;
     }
 
