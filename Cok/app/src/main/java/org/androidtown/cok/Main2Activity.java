@@ -23,7 +23,7 @@ public class Main2Activity extends AppCompatActivity {
     EditText title;
     int count = 0,pcnt=0;
     public  static  Intent clintent;
-
+    public static int YEAR,MON,DAY,year,mon,day1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,29 +72,29 @@ public class Main2Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             Bundle bundle = data.getExtras();
-            sd_button.setText("Start  :" + bundle.getInt("YEAR") + " 년 " + bundle.getInt("MONTH") + " 월 " + bundle.getInt("DAY") + " 일");
-            fd_button.setText("Finish :" + bundle.getInt("Year") + " 년 " + bundle.getInt("Month") + " 월 " + bundle.getInt("Day") + " 일");
-            if (bundle.getInt("MONTH") < 10) {
-                if (bundle.getInt("DAY") < 10)
-                    s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + "0" + bundle.getInt("DAY");
+            sd_button.setText("Start  :" + YEAR + " 년 " + MON + " 월 " + DAY + " 일");
+            fd_button.setText("Finish :" + year + " 년 " + mon + " 월 " + day1 + " 일");
+            if (MON < 10) {
+                if (DAY < 10)
+                    s = YEAR + "-" + "0" + MON + "-" + "0" + DAY;
                 else
-                    s = bundle.getInt("YEAR") + "-" + "0" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
+                    s = YEAR + "-" + "0" + MON + "-" + DAY;
             } else {
-                if (bundle.getInt("DAY") < 10)
-                    s = bundle.getInt("YEAR") + "-" + bundle.getInt("MONTH") + "-" + "0" + bundle.getInt("DAY");
+                if (DAY < 10)
+                    s = YEAR + "-" + MON + "-" + "0" + DAY;
                 else
-                    s = bundle.getInt("YEAR") + "-" + bundle.getInt("MONTH") + "-" + bundle.getInt("DAY");
+                    s = YEAR + "-" + MON + "-" + DAY;
             }
-            if (bundle.getInt("Month") < 10) {
-                if (bundle.getInt("Day") < 10)
-                    f = bundle.getInt("Year") + "-" + "0" + bundle.getInt("Month") + "-" + "0" + bundle.getInt("Day");
+            if (mon < 10) {
+                if (day1 < 10)
+                    f = year + "-" + "0" + mon + "-" + "0" + day1;
                 else
-                    f = bundle.getInt("Year") + "-" + "0" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
+                    f = year + "-" + "0" + mon + "-" + day1;
             } else {
-                if (bundle.getInt("Day") < 10)
-                    f = bundle.getInt("Year") + "-" + bundle.getInt("Month") + "-" + "0" + bundle.getInt("Day");
+                if (day1 < 10)
+                    f = year + "-" + mon + "-" + "0" + day1;
                 else
-                    f = bundle.getInt("Year") + "-" + bundle.getInt("Month") + "-" + bundle.getInt("Day");
+                    f = year + "-" + mon + "-" + day1;
             }
         }
     }
@@ -109,6 +109,10 @@ public class Main2Activity extends AppCompatActivity {
         String setCurDate = SettingFormat.format(date);
         sd_button.setText("Start  " + "     " + strCurDate);
         fd_button.setText("Finish " + "     " + strCurDate);
+        String[] arr = setCurDate.split("-");
+        YEAR=year = Integer.parseInt(arr[0]);
+        MON=mon = Integer.parseInt(arr[1]);
+        DAY=day1= Integer.parseInt(arr[2]);
         s = f = setCurDate;
     }
 
